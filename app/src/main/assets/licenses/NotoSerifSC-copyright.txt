@@ -1,0 +1,9 @@
+Noto Serif SC Regular — Version 2.003
+© 2017-2024 Adobe (http://www.adobe.com/).
+Noto is a trademark of Google Inc.
+Licensed under the SIL Open Font License, Version 1.1.
+See noto-OFL.txt for the complete license.
+
+Upstream: https://github.com/notofonts/noto-cjk/blob/Serif2.003/Serif/SubsetOTF/SC/NotoSerifSC-Regular.otf
+The distributed font is byte-identical to the upstream Git blob be55fbdf3fe53bfc99779389f3f0b875707bf496.
+SHA-256: e8f396decc1f0963a016a989c3d8852e863d1350996f573860a80767c83a1cd3

@@ -1,0 +1,14 @@
+LICENSE.txt	本项目免费分发许可
+NOTICE.txt	版权与第三方总声明
+RUNTIME-DEPENDENCIES.txt	正式运行时依赖清单
+ARTWORK-NOTICE.txt	角色素材与权利声明
+NotoSerifSC-copyright.txt	Noto Serif SC 字体版权
+noto-OFL.txt	Noto Serif SC · OFL 1.1
+liberation-OFL.txt	Liberation Sans · OFL 1.1
+Apache-2.0.txt	Apache License 2.0
+pdfbox-LICENSE.txt	PDFBox 完整许可
+pdfbox-NOTICE.txt	PDFBox 原 NOTICE
+pdfbox-resource-notices.txt	PDFBox 资源版权声明
+bouncycastle-1.72.txt	Bouncy Castle 许可
+Unicode-2017.txt	Unicode 数据许可
+RUNTIME-ARCHIVE-NOTICES.txt	运行时归档原始许可与声明

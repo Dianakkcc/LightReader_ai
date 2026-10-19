@@ -1,0 +1,18 @@
+LightReader 2.8.1
+Copyright (c) 2026 LightReader 项目贡献者
+依法有权许可的受保护部分按 LICENSE 的免费分发条件提供。第三方组件仍按其原许可授权。
+应用业务代码由 AI 生成和修改，维护者未手工编写代码；不据此主张全部 AI 输出的独占权。
+开发方式及许可边界见 docs/AI_DEVELOPMENT.md 和 README.md。
+
+This product includes software developed by the Android Open Source Project,
+JetBrains, Jonathan Hedley, Atlassian, Square, Tom Roush and the Apache Software
+Foundation, the Legion of the Bouncy Castle, and other upstream contributors.
+The applicable original notices and copyright statements are retained under licenses/.
+
+内置阅读字体 Noto Serif SC 2.003：© 2017-2024 Adobe；Noto 商标归 Google；SIL OFL 1.1。
+PDFBox 内的 Liberation Sans：2010 Google / 2012 Red Hat；SIL OFL 1.1。
+PDFBox 原 LICENSE / NOTICE 与 Adobe/Unicode 资源条款另行保留。
+
+角色和装饰图片权利归原作者/相关权利人，分发授权未核实，不适用项目原创许可。
+如有侵权，请通过本仓库 Issues 联系删除。
+详情见 THIRD_PARTY_LICENSES.md、docs/ASSETS.md 和 licenses/README.md。

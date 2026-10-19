@@ -1,0 +1,202 @@
+assets/com/tom_roush/fontbox/resources/unicode/Scripts.txt
+# Scripts-10.0.0.txt
+# Date: 2017-03-11, 06:40:37 GMT
+# © 2017 Unicode®, Inc.
+# Unicode and the Unicode Logo are registered trademarks of Unicode, Inc. in the U.S. and other countries.
+# For terms of use, see http://www.unicode.org/terms_of_use.html
+#
+# Unicode Character Database
+#   For documentation, see http://www.unicode.org/reports/tr44/
+# For more information, see:
+#   UAX #24, Unicode Script Property: http://www.unicode.org/reports/tr24/
+#     Especially the sections:
+#       http://www.unicode.org/reports/tr24/#Assignment_Script_Values
+#       http://www.unicode.org/reports/tr24/#Assignment_ScriptX_Values
+#
+
+# ================================================
+
+# Property:	Script
+
+#  All code points not explicitly listed for Script
+#  have the value Unknown (Zzzz).
+
+# @missing: 0000..10FFFF; Unknown
+
+# ================================================
+
+
+assets/com/tom_roush/pdfbox/resources/glyphlist/additional.txt
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# Format: Semicolon-delimited fields:
+#            (1) glyph name
+#            (2) Unicode scalar value
+#
+# These mappings are missing in glyphlist.txt
+# 
+
+assets/com/tom_roush/pdfbox/resources/glyphlist/glyphlist.txt
+# -----------------------------------------------------------
+# Copyright 1997, 1998, 2002, 2007, 2010 Adobe Systems Incorporated.
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or
+# without modification, are permitted provided that the
+# following conditions are met:
+#
+# Redistributions of source code must retain the above
+# copyright notice, this list of conditions and the following
+# disclaimer.
+#
+# Redistributions in binary form must reproduce the above
+# copyright notice, this list of conditions and the following
+# disclaimer in the documentation and/or other materials
+# provided with the distribution.
+#
+# Neither the name of Adobe Systems Incorporated nor the names
+# of its contributors may be used to endorse or promote
+# products derived from this software without specific prior
+# written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+# CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# -----------------------------------------------------------
+# Name:          Adobe Glyph List
+# Table version: 2.0
+# Date:          September 20, 2002
+# URL:           http://sourceforge.net/adobe/aglfn/
+#
+# Format: two semicolon-delimited fields:
+#   (1) glyph name--upper/lowercase letters and digits
+#   (2) Unicode scalar value--four uppercase hexadecimal digits
+#
+
+assets/com/tom_roush/pdfbox/resources/glyphlist/zapfdingbats.txt
+# -----------------------------------------------------------
+# Copyright 2002, 2010 Adobe Systems Incorporated.
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or
+# without modification, are permitted provided that the
+# following conditions are met:
+#
+# Redistributions of source code must retain the above
+# copyright notice, this list of conditions and the following
+# disclaimer.
+#
+# Redistributions in binary form must reproduce the above
+# copyright notice, this list of conditions and the following
+# disclaimer in the documentation and/or other materials
+# provided with the distribution.
+#
+# Neither the name of Adobe Systems Incorporated nor the names
+# of its contributors may be used to endorse or promote
+# products derived from this software without specific prior
+# written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+# CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# -----------------------------------------------------------
+# Name:          ITC Zapf Dingbats Glyph List
+# Table version: 2.0
+# Date:          September 20, 2002
+# URL:           http://sourceforge.net/adobe/aglfn/
+#
+# Format: two semicolon-delimited fields:
+#   (1) glyph name--upper/lowercase letters and digits
+#   (2) Unicode scalar value--four uppercase hexadecimal digits
+#
+
+assets/com/tom_roush/pdfbox/resources/text/BidiMirroring.txt
+# BidiMirroring-8.0.0.txt
+# Date: 2015-01-20, 18:30:00 GMT [KW, LI]
+#
+# Bidi_Mirroring_Glyph Property
+# 
+# This file is an informative contributory data file in the
+# Unicode Character Database.
+#
+# Copyright (c) 1991-2015 Unicode, Inc.
+# For terms of use, see http://www.unicode.org/terms_of_use.html
+#
+# This data file lists characters that have the Bidi_Mirrored=Yes property
+# value, for which there is another Unicode character that typically has a glyph
+# that is the mirror image of the original character's glyph.
+#
+# The repertoire covered by the file is Unicode 8.0.0.
+# 
+# The file contains a list of lines with mappings from one code point
+# to another one for character-based mirroring.
+# Note that for "real" mirroring, a rendering engine needs to select
+# appropriate alternative glyphs, and that many Unicode characters do not
+# have a mirror-image Unicode character.
+# 
+# Each mapping line contains two fields, separated by a semicolon (';').
+# Each of the two fields contains a code point represented as a
+# variable-length hexadecimal value with 4 to 6 digits.
+# A comment indicates where the characters are "BEST FIT" mirroring.
+# 
+# Code points for which Bidi_Mirrored=Yes, but for which no appropriate 
+# characters exist with mirrored glyphs, are
+# listed as comments at the end of the file.
+#
+# Formally, the default value of the Bidi_Mirroring_Glyph property
+# for each code point is <none>, unless a mapping to
+# some other character is specified in this data file. When a code
+# point has the default value for the Bidi_Mirroring_Glyph property,
+# that means that no other character exists whose glyph is suitable
+# for character-based mirroring.
+# 
+# For information on bidi mirroring, see UAX #9: Unicode Bidirectional Algorithm,
+# at http://www.unicode.org/unicode/reports/tr9/
+# 
+# This file was originally created by Markus Scherer.
+# Extended for Unicode 3.2, 4.0, 4.1, 5.0, 5.1, 5.2, and 6.0 by Ken Whistler,
+# and for subsequent versions by Ken Whistler and Laurentiu Iancu.
+# 
+# ############################################################
+#
+# Property:	Bidi_Mirroring_Glyph
+#
+# @missing: 0000..10FFFF; <none>
+
+
+CMap copyright headers remain embedded in the original resource files; separate full terms are retained in pdfbox-LICENSE.txt.
+Adobe AFM copyright notices remain in the resources; the unchanged AFM permission paragraph is in pdfbox-LICENSE.txt.
