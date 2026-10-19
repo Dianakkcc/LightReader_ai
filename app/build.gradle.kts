@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.security.KeyStore
 
 plugins {
     alias(libs.plugins.android.application)
@@ -10,16 +11,16 @@ plugins {
 
 android {
     namespace = "com.lightreader"
-    compileSdk = 35
+    compileSdk = 36
     buildToolsVersion = "35.0.0"
 
     defaultConfig {
         applicationId = "com.lightreader"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         // 每次发布同时递增这两项，版本历史见根目录 CHANGELOG.md。
-        versionCode = 33
-        versionName = "2.8.1"
+        versionCode = 35
+        versionName = "2.9.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables { useSupportLibrary = true }
@@ -31,6 +32,13 @@ android {
     if (signingValues.any { it != null }) {
         require(signingValues.all { !it.isNullOrBlank() }) {
             "发布签名需要同时设置全部四项 LR_KEYSTORE / LR_KEY 环境变量"
+        }
+        val releaseStore = KeyStore.getInstance(file(signingValues[0]!!), signingValues[1]!!.toCharArray())
+        val certificate = releaseStore.getCertificate(signingValues[2]!!)
+            as? java.security.cert.X509Certificate
+            ?: error("发布签名别名没有 X.509 证书")
+        require(!certificate.subjectX500Principal.name.contains("CN=Android Debug", ignoreCase = true)) {
+            "release 禁止使用 Android Debug 证书；请提供维护者发布密钥"
         }
         signingConfigs.create("publicRelease") {
             storeFile = file(signingValues[0]!!)
@@ -86,7 +94,8 @@ android {
     }
 
     lint {
-        abortOnError = false
+        abortOnError = true
+        checkReleaseBuilds = true
     }
 }
 

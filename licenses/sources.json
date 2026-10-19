@@ -187,6 +187,241 @@
   {
     "file": "ARTWORK-NOTICE.txt",
     "source": "项目素材追溯记录；第三方图片授权未核实",
-    "sha256": "65c1b0b326b69af55bf51d6196a00ca2b10ecf0ccb4335cef243084af7d46a73"
+    "sha256": "944e8a55b362208d58d0d36c01c78972a29423702cb1b3ae07684fd7e60c15a4"
+  },
+  {
+    "file": "README.md",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "d0564b636d23d6a381f67d5a4ea787a5b91b90421b1f013579febc5a8fc18c33"
+  },
+  {
+    "file": "RUNTIME-ARCHIVE-NOTICES.txt",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "45d828d5f4a3e51d3af2cd04b03d59e50a8e3e7c5fe5fb4355a7115203308392"
+  },
+  {
+    "file": "RUNTIME-DEPENDENCIES.txt",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "4453ffa02b3045f77d5a30f6343bc79190901f657e54f5a0f702d9033568513f"
+  },
+  {
+    "file": "notices/androidx.annotation_annotation-experimental_1.5.0__72993bc20bd6__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.5.0/annotation-experimental-1.5.0.aar!/META-INF/androidx/annotation/annotation-experimental/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.annotation_annotation-experimental_1.5.0__META-INF_androidx_annotation_annotation-experimental_LICENSE.txt",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.annotation_annotation-jvm_1.9.1__d9c51321a0a5__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.9.1/annotation-jvm-1.9.1.jar!/META-INF/androidx/annotation/annotation/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.annotation_annotation-jvm_1.9.1__META-INF_androidx_annotation_annotation_LICENSE.txt",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.collection_collection-jvm_1.5.0__d87b79584cfd__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/collection/collection-jvm/1.5.0/collection-jvm-1.5.0.jar!/META-INF/androidx/collection/collection/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.collection_collection-jvm_1.5.0__META-INF_androidx_collection_collection_LICENSE.txt",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.collection_collection-ktx_1.5.0__403e0954f966__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/collection/collection-ktx/1.5.0/collection-ktx-1.5.0.jar!/META-INF/androidx/collection/collection-ktx/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.collection_collection-ktx_1.5.0__META-INF_androidx_collection_collection-ktx_LICENSE.txt",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.animation_animation-android_1.8.2__ab908a6f26a4__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-android/1.8.2/animation-release.aar!/META-INF/androidx/compose/animation/animation/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.animation_animation-android_1.8.2__META-INF_androidx_compose_animation_animation_LICENSE.txt",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.animation_animation-core-android_1.8.2__c92c8d311fcf__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-core-android/1.8.2/animation-core-release.aar!/META-INF/androidx/compose/animation/animation-core/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.animation_animation-core-android_1.8.2__META-INF_androidx_compose_animation_animation-core_LICENSE.txt",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.foundation_foundation-android_1.8.2__f0cff7586288__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-android/1.8.2/foundation-release.aar!/META-INF/androidx/compose/foundation/foundation/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.foundation_foundation-android_1.8.2__META-INF_androidx_compose_foundation_foundation_LICENSE.txt",
+    "source": "Generated from actual resolved module inventory and preserved upstream files; see docs/dependencies.json",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.foundation_foundation-layout-android_1__9ab3e2b8997c__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-layout-android/1.8.2/foundation-layout-release.aar!/META-INF/androidx/compose/foundation/foundation-layout/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.material_material-android_1.8.2__f20a921a0995__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-android/1.8.2/material-release.aar!/META-INF/androidx/compose/material/material/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.material_material-icons-extended-andro__61d0e5bd8e0b__CopyrightKt.class",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended-android/1.7.8/material-icons-extended-release.aar!/classes.jar!/androidx/compose/material/icons/filled/CopyrightKt.class",
+    "sha256": "c16153b684a6d2c784b04e6a8bb9573316556857d7aef623abbe6f2d4f7755e9"
+  },
+  {
+    "file": "notices/androidx.compose.material_material-icons-extended-andro__9a182b899d6a__CopyrightKt.class",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended-android/1.7.8/material-icons-extended-release.aar!/classes.jar!/androidx/compose/material/icons/sharp/CopyrightKt.class",
+    "sha256": "ffef3606dba4c523282f4d2a3c998dfe3a23cf97fc076bbf6b922a7f96c76e11"
+  },
+  {
+    "file": "notices/androidx.compose.material_material-icons-extended-andro__b74edbb19125__CopyrightKt.class",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended-android/1.7.8/material-icons-extended-release.aar!/classes.jar!/androidx/compose/material/icons/outlined/CopyrightKt.class",
+    "sha256": "a2f2825727e796ad7d0fe75bdc83b5a259fc62287b3644a3f5a767c94201fd03"
+  },
+  {
+    "file": "notices/androidx.compose.material_material-icons-extended-andro__c23ab78e99ab__CopyrightKt.class",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended-android/1.7.8/material-icons-extended-release.aar!/classes.jar!/androidx/compose/material/icons/rounded/CopyrightKt.class",
+    "sha256": "b7af80a50e69412284dbc5475af139505374aa442d95db10145ee5dcfd9cfd5f"
+  },
+  {
+    "file": "notices/androidx.compose.material_material-icons-extended-andro__e4841d862f9b__CopyrightKt.class",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended-android/1.7.8/material-icons-extended-release.aar!/classes.jar!/androidx/compose/material/icons/twotone/CopyrightKt.class",
+    "sha256": "049dc3b09ef978141585d9bef10bf6320f447283e5486dccc27439ff22cab337"
+  },
+  {
+    "file": "notices/androidx.compose.material_material-ripple-android_1.8.2__72e6e7a1018f__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-ripple-android/1.8.2/material-ripple-release.aar!/META-INF/androidx/compose/material/material-ripple/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.runtime_runtime-android_1.8.2__358556a76512__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-android/1.8.2/runtime-release.aar!/META-INF/androidx/compose/runtime/runtime/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.runtime_runtime-saveable-android_1.8.2__d2a326226404__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-saveable-android/1.8.2/runtime-saveable-release.aar!/META-INF/androidx/compose/runtime/runtime-saveable/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-android_1.8.2__82627094942f__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.8.2/ui-release.aar!/META-INF/androidx/compose/ui/ui/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-geometry-android_1.8.2__226367fa6e82__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-geometry-android/1.8.2/ui-geometry-release.aar!/META-INF/androidx/compose/ui/ui-geometry/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-graphics-android_1.8.2__43655553efce__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-graphics-android/1.8.2/ui-graphics-release.aar!/META-INF/androidx/compose/ui/ui-graphics/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-test-android_1.8.2__c602e8b13686__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-test-android/1.8.2/ui-test-release.aar!/META-INF/androidx/compose/ui/ui-test/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-test-junit4-android_1.8.2__796080de6958__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-test-junit4-android/1.8.2/ui-test-junit4-release.aar!/META-INF/androidx/compose/ui/ui-test-junit4/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-test-manifest_1.8.2__a68e82ed02cb__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-test-manifest/1.8.2/ui-test-manifest-1.8.2.aar!/META-INF/androidx/compose/ui/ui-test-manifest/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-text-android_1.8.2__5e8e33bdd3d7__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-text-android/1.8.2/ui-text-release.aar!/META-INF/androidx/compose/ui/ui-text/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-tooling-android_1.8.2__0b6089f00a6a__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-android/1.8.2/ui-tooling-release.aar!/META-INF/androidx/compose/ui/ui-tooling/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-tooling-data-android_1.8.2__5f5290ee5f15__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-data-android/1.8.2/ui-tooling-data-release.aar!/META-INF/androidx/compose/ui/ui-tooling-data/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-tooling-preview-android_1.8.2__aaf9f4176c2f__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-preview-android/1.8.2/ui-tooling-preview-release.aar!/META-INF/androidx/compose/ui/ui-tooling-preview/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-unit-android_1.8.2__51455ccdbcc1__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-unit-android/1.8.2/ui-unit-release.aar!/META-INF/androidx/compose/ui/ui-unit/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.compose.ui_ui-util-android_1.8.2__b6ccb6c3fae1__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-util-android/1.8.2/ui-util-release.aar!/META-INF/androidx/compose/ui/ui-util/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.profileinstaller_profileinstaller_1.4.0__dde0baf5e65a__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/profileinstaller/profileinstaller/1.4.0/profileinstaller-1.4.0.aar!/META-INF/androidx/profileinstaller/profileinstaller/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.room_room-common-jvm_2.8.5__bd490c3737fe__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/room/room-common-jvm/2.8.5/room-common-jvm-2.8.5.jar!/META-INF/androidx/room/room-common/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.room_room-ktx_2.8.5__37bc1d2d0fe8__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/room/room-ktx/2.8.5/room-ktx-2.8.5.aar!/META-INF/androidx/room/room-ktx/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.room_room-runtime-android_2.8.5__aaf3f9534efd__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/room/room-runtime-android/2.8.5/room-runtime.aar!/META-INF/androidx/room/room-runtime/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.sqlite_sqlite-android_2.6.2__2782af714d1b__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-android/2.6.2/sqlite.aar!/META-INF/androidx/sqlite/sqlite/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/androidx.sqlite_sqlite-framework-android_2.6.2__9cf33cd8c882__LICENSE.txt",
+    "source": "https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-framework-android/2.6.2/sqlite-framework.aar!/META-INF/androidx/sqlite/sqlite-framework/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/org.jsoup_jsoup_1.23.2__f7c6a1039861__LICENSE",
+    "source": "https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.23.2/jsoup-1.23.2.jar!/META-INF/jsoup/LICENSE",
+    "sha256": "f5d724c5818010c61bff2e177f5b6452434bc054807522bf241940bca8b1d6b1"
+  },
+  {
+    "file": "protobuf-4.28.2-BSD.txt",
+    "source": "https://raw.githubusercontent.com/protocolbuffers/protobuf/v28.2/LICENSE (embedded RuntimeVersion constants identify protobuf 4.28.2)",
+    "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d"
   }
 ]

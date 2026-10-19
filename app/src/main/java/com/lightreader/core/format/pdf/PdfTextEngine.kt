@@ -92,7 +92,7 @@ class PdfTextEngine(
             if (destination is PDPageDestination) {
                 val page = runCatching { destination.page }.getOrNull()
                     ?: return@runCatching -1
-                if (page == null) -1 else document.pages.indexOf(page)
+                document.pages.indexOf(page)
             } else {
                 -1
             }

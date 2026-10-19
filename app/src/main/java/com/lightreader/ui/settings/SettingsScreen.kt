@@ -1,5 +1,7 @@
 ﻿package com.lightreader.ui.settings
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
@@ -106,10 +108,10 @@ fun SettingsScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(if (showFontManager) "字体管理" else "设置") },
+                title = { Text(if (showFontManager) AppStrings.get(R.string.settings_font_manager) else AppStrings.get(R.string.settings_title)) },
                 navigationIcon = {
                     IconButton(onClick = { if (showFontManager) showFontManager = false else onBack() }) {
-                        Icon(LocalAppIcons.current.back, contentDescription = "返回")
+                        Icon(LocalAppIcons.current.back, contentDescription = AppStrings.get(R.string.action_back))
                     }
                 },
             )
@@ -137,15 +139,15 @@ fun SettingsScreen(
                 .padding(padding),
         ) {
             item(key = "setting1") {
-                SectionTitle("阅读")
+                SectionTitle(AppStrings.get(R.string.settings_reading))
             }
             item(key = "setting2") {
                 ChipGroup(
-                    label = "应用主题",
+                    label = AppStrings.get(R.string.ui_app_theme_168),
                     options = listOf(
-                        com.lightreader.core.model.AppThemeMode.SYSTEM to "跟随系统",
-                        com.lightreader.core.model.AppThemeMode.LIGHT to "浅色",
-                        com.lightreader.core.model.AppThemeMode.DARK to "深色",
+                        com.lightreader.core.model.AppThemeMode.SYSTEM to AppStrings.get(R.string.settings_theme_system),
+                        com.lightreader.core.model.AppThemeMode.LIGHT to AppStrings.get(R.string.ui_light_170),
+                        com.lightreader.core.model.AppThemeMode.DARK to AppStrings.get(R.string.settings_theme_dark),
                     ),
                     selected = state.appThemeMode,
                     onSelect = viewModel::setThemeMode,
@@ -153,7 +155,7 @@ fun SettingsScreen(
             }
             item(key = "setting3") {
                 ChipGroup(
-                    label = "配色",
+                    label = AppStrings.get(R.string.ui_color_palette_172),
                     options = com.lightreader.ui.theme.AppPalette.entries.map { it to it.label },
                     selected = state.appPalette,
                     onSelect = viewModel::setPalette,
@@ -161,7 +163,7 @@ fun SettingsScreen(
             }
             item(key = "setting4") {
                 ChipGroup(
-                    label = "书架底色",
+                    label = AppStrings.get(R.string.ui_library_background_173),
                     options = com.lightreader.ui.theme.BackgroundTone.entries.map { it to it.label },
                     selected = state.appBackground,
                     onSelect = viewModel::setBackground,
@@ -169,44 +171,44 @@ fun SettingsScreen(
             }
             item(key = "setting5") {
                 ChipGroup(
-                    label = "整体风格",
+                    label = AppStrings.get(R.string.ui_visual_style_174),
                     options = com.lightreader.ui.theme.ThemeStyle.entries.map { it to it.label },
                     selected = state.appStyle,
                     onSelect = viewModel::setStyle,
                 )
             }
             item(key = "setting6") {
-                CommitSlider("默认字号", state.reader.fontSizeSp, 12f..34f, { "${it.toInt()} sp" }) {
+                CommitSlider(AppStrings.get(R.string.ui_default_font_size_175), state.reader.fontSizeSp, 12f..34f, { "${it.toInt()} sp" }) {
                     value -> viewModel.updateReader { it.copy(fontSizeSp = value) }
                 }
             }
             item(key = "setting7") {
-                CommitSlider("默认行距", state.reader.lineHeightMultiplier, 1.1f..2.6f, { "%.1f".format(it) }) {
+                CommitSlider(AppStrings.get(R.string.ui_default_line_spacing_176), state.reader.lineHeightMultiplier, 1.1f..2.6f, { "%.1f".format(it) }) {
                     value -> viewModel.updateReader { it.copy(lineHeightMultiplier = value) }
                 }
             }
             item(key = "setting8") {
-                CommitSlider("默认页边距", state.reader.marginDp.toFloat(), 8f..48f, { "${it.toInt()} dp" }) {
+                CommitSlider(AppStrings.get(R.string.ui_default_margins_177), state.reader.marginDp.toFloat(), 8f..48f, { "${it.toInt()} dp" }) {
                     value -> viewModel.updateReader { it.copy(marginDp = value.toInt()) }
                 }
             }
             item(key = "setting9") {
                 ChipGroup(
-                    label = "默认主题",
+                    label = AppStrings.get(R.string.ui_default_paper_theme_178),
                     options = listOf(
-                        ThemePreference.SYSTEM to "跟随系统",
-                        ThemePreference.PAPER to "纸白",
-                        ThemePreference.OAT to "燕麦",
-                        ThemePreference.SAGE to "灰绿",
-                        ThemePreference.ROSE to "樱粉",
-                        ThemePreference.MINT to "薄荷",
-                        ThemePreference.AZURE to "湖蓝",
-                        ThemePreference.LILAC to "香芋",
-                        ThemePreference.NIGHT to "夜灰",
-                        ThemePreference.DUSK to "紫夜",
-                        ThemePreference.FOREST to "墨绿",
-                        ThemePreference.BLACK to "黑色",
-                        ThemePreference.JIARAN to "嘉然",
+                        ThemePreference.SYSTEM to AppStrings.get(R.string.settings_theme_system),
+                        ThemePreference.PAPER to AppStrings.get(R.string.ui_paper_179),
+                        ThemePreference.OAT to AppStrings.get(R.string.ui_oat_180),
+                        ThemePreference.SAGE to AppStrings.get(R.string.ui_sage_181),
+                        ThemePreference.ROSE to AppStrings.get(R.string.ui_rose_182),
+                        ThemePreference.MINT to AppStrings.get(R.string.ui_mint_183),
+                        ThemePreference.AZURE to AppStrings.get(R.string.ui_lake_184),
+                        ThemePreference.LILAC to AppStrings.get(R.string.ui_lilac_185),
+                        ThemePreference.NIGHT to AppStrings.get(R.string.ui_night_gray_186),
+                        ThemePreference.DUSK to AppStrings.get(R.string.ui_violet_night_187),
+                        ThemePreference.FOREST to AppStrings.get(R.string.ui_deep_green_188),
+                        ThemePreference.BLACK to AppStrings.get(R.string.settings_theme_black),
+                        ThemePreference.JIARAN to AppStrings.get(R.string.ui_diana_190),
                     ),
                     selected = state.reader.theme,
                     onSelect = { theme -> viewModel.updateReader { it.copy(theme = theme) } },
@@ -214,10 +216,10 @@ fun SettingsScreen(
             }
             item(key = "setting10") {
                 ChipGroup(
-                    label = "翻页方式",
+                    label = AppStrings.get(R.string.settings_reading_mode),
                     options = listOf(
-                        ReadingMode.PAGED to "翻页",
-                        ReadingMode.SCROLL to "滚动",
+                        ReadingMode.PAGED to AppStrings.get(R.string.reader_paged_mode),
+                        ReadingMode.SCROLL to AppStrings.get(R.string.reader_reflow_mode),
                     ),
                     selected = state.reader.readingMode,
                     onSelect = { mode -> viewModel.updateReader { it.copy(readingMode = mode) } },
@@ -225,11 +227,11 @@ fun SettingsScreen(
             }
             item(key = "setting11") {
                 ChipGroup(
-                    label = "首行缩进",
+                    label = AppStrings.get(R.string.ui_first_line_indent_89),
                     options = listOf(
-                        IndentMode.AUTO to "自动",
-                        IndentMode.ON to "缩进两字",
-                        IndentMode.OFF to "不缩进",
+                        IndentMode.AUTO to AppStrings.get(R.string.ui_auto_90),
+                        IndentMode.ON to AppStrings.get(R.string.ui_two_characters_91),
+                        IndentMode.OFF to AppStrings.get(R.string.ui_no_indent_92),
                     ),
                     selected = state.reader.indentMode,
                     onSelect = { mode -> viewModel.updateReader { it.copy(indentMode = mode) } },
@@ -237,26 +239,26 @@ fun SettingsScreen(
             }
             item(key = "setting12") {
                 SwitchRow(
-                    title = "使用宋体（衬线字体）",
-                    subtitle = "正文默认使用系统中文字体，开启后改用衬线字体",
+                    title = AppStrings.get(R.string.ui_use_serif_font_193),
+                    subtitle = AppStrings.get(R.string.ui_use_a_serif_face_instead_of_the_default_system_f_194),
                     checked = state.reader.useSerif,
                     onChange = { value -> viewModel.updateReader { it.copy(useSerif = value) } },
                 )
             }
             item(key = "setting13") {
                 SwitchRow(
-                    title = "双页模式",
-                    subtitle = "平板或横屏时并排显示两页（PDF 与图片）",
+                    title = AppStrings.get(R.string.settings_dual_page),
+                    subtitle = AppStrings.get(R.string.ui_display_two_pdf_or_image_pages_side_by_side_on_t_195),
                     checked = state.reader.dualPage,
                     onChange = { value -> viewModel.updateReader { it.copy(dualPage = value) } },
                 )
             }
             item(key = "setting14") {
                 ListItem(
-                    headlineContent = { Text("字体管理") },
+                    headlineContent = { Text(AppStrings.get(R.string.settings_font_manager)) },
                     supportingContent = {
                         Text(
-                            text = state.reader.fontDisplayName?.let { "当前：$it" } ?: "当前：系统默认字体",
+                            text = state.reader.fontDisplayName?.let { AppStrings.get(R.string.ui_current_196, it) } ?: AppStrings.get(R.string.ui_current_system_font_197),
                             style = MaterialTheme.typography.bodySmall,
                         )
                     },
@@ -268,14 +270,14 @@ fun SettingsScreen(
                 HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
             }
             item(key = "setting16") {
-                SectionTitle("书架")
+                SectionTitle(AppStrings.get(R.string.settings_library))
             }
             item(key = "setting17") {
                 ChipGroup(
-                    label = "默认布局",
+                    label = AppStrings.get(R.string.settings_default_layout),
                     options = listOf(
-                        LibraryLayout.GRID to "网格",
-                        LibraryLayout.LIST to "列表",
+                        LibraryLayout.GRID to AppStrings.get(R.string.library_grid),
+                        LibraryLayout.LIST to AppStrings.get(R.string.library_list),
                     ),
                     selected = state.library.layout,
                     onSelect = { layout -> viewModel.updateLibrary { it.copy(layout = layout) } },
@@ -283,11 +285,11 @@ fun SettingsScreen(
             }
             item(key = "setting18") {
                 ChipGroup(
-                    label = "默认排序",
+                    label = AppStrings.get(R.string.ui_default_sort_order_199),
                     options = listOf(
-                        LibrarySort.RECENT to "最近阅读",
-                        LibrarySort.ADDED to "最近添加",
-                        LibrarySort.TITLE to "按书名",
+                        LibrarySort.RECENT to AppStrings.get(R.string.section_recent),
+                        LibrarySort.ADDED to AppStrings.get(R.string.sort_added),
+                        LibrarySort.TITLE to AppStrings.get(R.string.sort_title),
                     ),
                     selected = state.library.sort,
                     onSelect = { sort -> viewModel.updateLibrary { it.copy(sort = sort) } },
@@ -295,30 +297,30 @@ fun SettingsScreen(
             }
             item(key = "setting19") {
                 ChipGroup(
-                    label = "书籍每行数量",
-                    options = listOf(0 to "自动") + (2..6).map { it to "$it 个" },
+                    label = AppStrings.get(R.string.ui_books_per_row_200),
+                    options = listOf(0 to AppStrings.get(R.string.ui_auto_90)) + (2..6).map { it to AppStrings.get(R.string.ui_items_201, it) },
                     selected = state.library.gridColumns,
                     onSelect = { count -> viewModel.updateLibrary { it.copy(gridColumns = count) } },
                 )
             }
             item(key = "setting20") {
                 ChipGroup(
-                    label = "漫画每行数量",
-                    options = listOf(0 to "自动") + (2..6).map { it to "$it 个" },
+                    label = AppStrings.get(R.string.ui_comics_per_row_202),
+                    options = listOf(0 to AppStrings.get(R.string.ui_auto_90)) + (2..6).map { it to AppStrings.get(R.string.ui_items_201, it) },
                     selected = state.library.comicGridColumns,
                     onSelect = { count -> viewModel.updateLibrary { it.copy(comicGridColumns = count) } },
                 )
             }
             item(key = "setting21") {
                 SwitchRow(
-                    title = "显示作者",
+                    title = AppStrings.get(R.string.settings_show_author),
                     checked = state.library.showAuthor,
                     onChange = { value -> viewModel.updateLibrary { it.copy(showAuthor = value) } },
                 )
             }
             item(key = "setting22") {
                 SwitchRow(
-                    title = "显示阅读进度",
+                    title = AppStrings.get(R.string.settings_show_progress),
                     checked = state.library.showProgress,
                     onChange = { value -> viewModel.updateLibrary { it.copy(showProgress = value) } },
                 )
@@ -328,14 +330,14 @@ fun SettingsScreen(
                 HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
             }
             item(key = "setting24") {
-                SectionTitle("数据")
+                SectionTitle(AppStrings.get(R.string.settings_data))
             }
             item(key = "setting25") {
                 ListItem(
-                    headlineContent = { Text("清理缓存") },
+                    headlineContent = { Text(AppStrings.get(R.string.settings_clear_cache)) },
                     supportingContent = {
                         Text(
-                            text = "当前占用 ${Formatters.fileSize(state.cacheBytes)}，不会删除书籍",
+                            text = AppStrings.get(R.string.ui_using_books_are_kept_207, Formatters.fileSize(state.cacheBytes)),
                             style = MaterialTheme.typography.bodySmall,
                         )
                     },
@@ -344,18 +346,18 @@ fun SettingsScreen(
             }
             item(key = "setting26") {
                 ListItem(
-                    headlineContent = { Text("清理阅读历史") },
+                    headlineContent = { Text(AppStrings.get(R.string.settings_clear_history)) },
                     supportingContent = {
-                        Text("清除阅读进度与最近阅读记录", style = MaterialTheme.typography.bodySmall)
+                        Text(AppStrings.get(R.string.settings_clear_history_summary), style = MaterialTheme.typography.bodySmall)
                     },
                     modifier = Modifier.clickable { viewModel.clearHistory() },
                 )
             }
             item(key = "setting27") {
                 ListItem(
-                    headlineContent = { Text("导出阅读数据") },
+                    headlineContent = { Text(AppStrings.get(R.string.settings_export)) },
                     supportingContent = {
-                        Text("导出进度、书签与设置为 JSON 文件", style = MaterialTheme.typography.bodySmall)
+                        Text(AppStrings.get(R.string.ui_export_progress_bookmarks_and_settings_as_json_211), style = MaterialTheme.typography.bodySmall)
                     },
                     modifier = Modifier.clickable {
                         exportLauncher.launch("lightreader-backup.json")
@@ -364,9 +366,9 @@ fun SettingsScreen(
             }
             item(key = "setting28") {
                 ListItem(
-                    headlineContent = { Text("导入阅读数据") },
+                    headlineContent = { Text(AppStrings.get(R.string.settings_import)) },
                     supportingContent = {
-                        Text("从之前导出的 JSON 文件恢复", style = MaterialTheme.typography.bodySmall)
+                        Text(AppStrings.get(R.string.ui_restore_a_previously_exported_json_backup_213), style = MaterialTheme.typography.bodySmall)
                     },
                     modifier = Modifier.clickable { importLauncher.launch(arrayOf("application/json", "*/*")) },
                 )
@@ -376,11 +378,11 @@ fun SettingsScreen(
                 HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
             }
             item(key = "setting30") {
-                SectionTitle("关于")
+                SectionTitle(AppStrings.get(R.string.settings_about))
             }
             item(key = "setting31") {
                 ListItem(
-                    headlineContent = { Text("版本") },
+                    headlineContent = { Text(AppStrings.get(R.string.settings_version)) },
                     supportingContent = {
                         Text(
                             text = "${BuildConfig.VERSION_NAME}（${BuildConfig.VERSION_CODE}）",
@@ -391,7 +393,7 @@ fun SettingsScreen(
             }
             item(key = "setting32") {
                 ListItem(
-                    headlineContent = { Text("屏幕刷新率") },
+                    headlineContent = { Text(AppStrings.get(R.string.ui_display_refresh_rate_216)) },
                     supportingContent = {
                         Text(
                             text = displayRefreshLabel(),
@@ -402,10 +404,10 @@ fun SettingsScreen(
             }
             item(key = "setting33") {
                 ListItem(
-                    headlineContent = { Text("隐私") },
+                    headlineContent = { Text(AppStrings.get(R.string.ui_privacy_217)) },
                     supportingContent = {
                         Text(
-                            text = "应用未申请网络权限，不主动上传数据。系统备份、换机迁移及所选文件提供程序按各自设置运行。",
+                            text = AppStrings.get(R.string.ui_the_app_has_no_network_permission_and_does_not_u_218),
                             style = MaterialTheme.typography.bodySmall,
                         )
                     },
@@ -413,10 +415,10 @@ fun SettingsScreen(
             }
             item(key = "setting34") {
                 ListItem(
-                    headlineContent = { Text("许可与声明") },
+                    headlineContent = { Text(AppStrings.get(R.string.ui_licenses_and_notices_162)) },
                     supportingContent = {
                         Text(
-                            text = "查看免费分发条款、第三方组件许可、字体和角色素材的权利声明。",
+                            text = AppStrings.get(R.string.ui_view_free_distribution_terms_and_notices_for_lib_219),
                             style = MaterialTheme.typography.bodySmall,
                         )
                     },
@@ -444,8 +446,8 @@ private fun FontManagerContent(
 
     Column(modifier = modifier.padding(16.dp)) {
         Text(
-            text = "支持 .ttf / .otf / .ttc 字体文件。导入后字体保存在应用私有目录，" +
-                "即使原始文件被删除也能继续使用。",
+            text = AppStrings.get(R.string.ui_supports_ttf_otf_ttc_fonts_imported_fonts_are_st_220) +
+                AppStrings.get(R.string.ui_and_keep_working_after_the_original_file_is_dele_221),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
@@ -453,15 +455,15 @@ private fun FontManagerContent(
         OutlinedButton(onClick = onImport, modifier = Modifier.fillMaxWidth()) {
             Icon(LocalAppIcons.current.upload, contentDescription = null)
             Spacer(Modifier.width(8.dp))
-            Text("导入字体")
+            Text(AppStrings.get(R.string.settings_font_import))
         }
         Spacer(Modifier.height(12.dp))
         OutlinedButton(onClick = onUseSystem, modifier = Modifier.fillMaxWidth()) {
-            Text("使用系统默认字体")
+            Text(AppStrings.get(R.string.ui_use_system_font_223))
         }
         Spacer(Modifier.height(16.dp))
         if (fonts.isEmpty()) {
-            Text("还没有导入字体", style = MaterialTheme.typography.bodyMedium)
+            Text(AppStrings.get(R.string.settings_font_empty), style = MaterialTheme.typography.bodyMedium)
         }
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
             fonts.forEach { font ->
@@ -479,16 +481,16 @@ private fun FontManagerContent(
     deleteCandidate?.let { font ->
         AlertDialog(
             onDismissRequest = { deleteCandidate = null },
-            title = { Text("删除字体？") },
-            text = { Text("将删除字体「${font.displayName}」，使用该字体的阅读设置会回到系统字体。") },
+            title = { Text(AppStrings.get(R.string.ui_delete_font_225)) },
+            text = { Text(AppStrings.get(R.string.ui_delete_reading_settings_using_this_font_will_swi_226, font.displayName)) },
             confirmButton = {
                 TextButton(onClick = {
                     onDelete(font)
                     deleteCandidate = null
-                }) { Text("删除") }
+                }) { Text(AppStrings.get(R.string.action_delete)) }
             },
             dismissButton = {
-                TextButton(onClick = { deleteCandidate = null }) { Text("取消") }
+                TextButton(onClick = { deleteCandidate = null }) { Text(AppStrings.get(R.string.action_cancel)) }
             },
         )
     }
@@ -517,7 +519,7 @@ private fun FontCard(
                                 modifier = Modifier.padding(start = 8.dp),
                             ) {
                                 Text(
-                                    text = "内置",
+                                    text = AppStrings.get(R.string.ui_built_in_227),
                                     style = MaterialTheme.typography.labelSmall,
                                     color = MaterialTheme.colorScheme.onSecondaryContainer,
                                     modifier = Modifier.padding(horizontal = 6.dp, vertical = 1.dp),
@@ -532,21 +534,21 @@ private fun FontCard(
                     )
                 }
                 if (isDefault) {
-                    Text("默认", style = MaterialTheme.typography.labelMedium)
+                    Text(AppStrings.get(R.string.ui_default_228), style = MaterialTheme.typography.labelMedium)
                 }
                 IconButton(onClick = onDelete) {
-                    Icon(LocalAppIcons.current.delete, contentDescription = "删除字体")
+                    Icon(LocalAppIcons.current.delete, contentDescription = AppStrings.get(R.string.settings_font_delete))
                 }
             }
             Text(
-                text = "Aa Bb Cc 你好，世界 The quick brown fox 0123456789",
+                text = AppStrings.get(R.string.ui_aa_bb_cc_the_quick_brown_fox_0123456789_230),
                 style = TextStyle(
                     fontFamily = family ?: FontFamily.Default,
                     fontSize = 18.sp,
                 ),
                 modifier = Modifier.padding(vertical = 8.dp),
             )
-            TextButton(onClick = onSetDefault) { Text("设为默认") }
+            TextButton(onClick = onSetDefault) { Text(AppStrings.get(R.string.settings_font_set_default)) }
         }
     }
 }
@@ -561,21 +563,21 @@ private fun FontCard(
 @Composable
 private fun displayRefreshLabel(): String {
     val context = androidx.compose.ui.platform.LocalContext.current
-    val display = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+    val display = runCatching { if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
         context.display
     } else {
         @Suppress("DEPRECATION")
         (context.getSystemService(android.content.Context.WINDOW_SERVICE) as? android.view.WindowManager)
             ?.defaultDisplay
-    }
-    val current = display?.refreshRate ?: return "未知"
+    } }.getOrNull()
+    val current = display?.refreshRate ?: return AppStrings.get(R.string.ui_unknown_232)
     val modes = runCatching { display.supportedModes }.getOrNull()
         .orEmpty()
         .map { it.refreshRate }
         .distinct()
         .sorted()
     val supported = if (modes.isEmpty()) "?" else modes.joinToString("/") { "%.0f".format(it) }
-    return "当前 %.0f Hz · 支持 %s Hz".format(current, supported)
+    return AppStrings.get(R.string.ui_current_1_0f_hz_supported_2_hz_233).format(current, supported)
 }
 
 @Composable

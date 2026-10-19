@@ -25,3 +25,5 @@
 `notices/` 保存从 Maven JAR/AAR（含 classes.jar）提取的原 LICENSE/NOTICE；每项坐标对应路径见 JSON。JUnit、Rhino、ICU、javax.annotation 等的上游原文也在此目录。
 
 `asm-BSD.txt` 来自 Maven Central 的 ASM 9.7.1 原始 sources.jar 版权/许可头，与发布 POM 的 BSD-3-Clause 一致。构建与测试依赖的源码包仅用于核对，不随仓库重复分发。
+
+2.9.0新增DataStore重打包protobuf4.28.2的[BSD许可](protobuf-4.28.2-BSD.txt)，具体嵌入模块映射见依赖JSON。

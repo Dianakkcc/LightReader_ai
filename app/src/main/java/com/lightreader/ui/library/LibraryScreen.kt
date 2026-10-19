@@ -1,5 +1,7 @@
 ﻿package com.lightreader.ui.library
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -152,7 +154,7 @@ fun LibraryScreen(
                     }
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
-                            text = "书架",
+                            text = AppStrings.get(R.string.settings_library),
                             style = MaterialTheme.typography.headlineSmall,
                             fontWeight = FontWeight.SemiBold,
                         )
@@ -160,12 +162,12 @@ fun LibraryScreen(
                         Text(
                             text = if (shelfBooks.isEmpty()) {
                                 if (state.shelf == ShelfKind.COMIC) {
-                                    "还没有漫画"
+                                    AppStrings.get(R.string.ui_no_comics_yet_2)
                                 } else {
-                                    "还没有导入书籍"
+                                    AppStrings.get(R.string.ui_no_books_imported_yet_3)
                                 }
                             } else {
-                                val unit = if (state.shelf == ShelfKind.COMIC) "部" else "本"
+                                val unit = if (state.shelf == ShelfKind.COMIC) AppStrings.get(R.string.ui_comics_4) else AppStrings.get(R.string.ui_books_5)
                                 "${shelfBooks.size} $unit · " +
                                     Formatters.relativeTime(
                                         shelfBooks.maxOfOrNull { it.lastOpenedAt ?: it.addedAt },
@@ -181,7 +183,7 @@ fun LibraryScreen(
                     }) {
                         Icon(
                             if (searchVisible) LocalAppIcons.current.close else LocalAppIcons.current.search,
-                            contentDescription = "搜索",
+                            contentDescription = AppStrings.get(R.string.reader_search),
                         )
                     }
                     val dark = when (state.themeMode) {
@@ -194,7 +196,7 @@ fun LibraryScreen(
                     if (LocalConfiguration.current.screenWidthDp >= 600) {
                         Box {
                             IconButton(onClick = { sortMenuVisible = true }) {
-                                Icon(LocalAppIcons.current.sort, contentDescription = "排序")
+                                Icon(LocalAppIcons.current.sort, contentDescription = AppStrings.get(R.string.library_sort))
                             }
                             SortMenu(
                                 expanded = sortMenuVisible,
@@ -212,37 +214,37 @@ fun LibraryScreen(
                                 } else {
                                     LocalAppIcons.current.dark
                                 },
-                                contentDescription = if (dark) "切换到浅色模式" else "切换到深色模式",
+                                contentDescription = if (dark) AppStrings.get(R.string.ui_switch_to_light_mode_8) else AppStrings.get(R.string.ui_switch_to_dark_mode_9),
                             )
                         }
                         IconButton(onClick = onOpenSettings) {
-                            Icon(LocalAppIcons.current.settings, contentDescription = "设置")
+                            Icon(LocalAppIcons.current.settings, contentDescription = AppStrings.get(R.string.settings_title))
                         }
                     } else {
                         Box {
                             IconButton(onClick = { overflowVisible = true }) {
-                                Icon(LocalAppIcons.current.more, contentDescription = "更多")
+                                Icon(LocalAppIcons.current.more, contentDescription = AppStrings.get(R.string.action_more))
                             }
                             DropdownMenu(
                                 expanded = overflowVisible,
                                 onDismissRequest = { overflowVisible = false },
                             ) {
                                 DropdownMenuItem(
-                                    text = { Text(if (dark) "切换到浅色" else "切换到深色") },
+                                    text = { Text(if (dark) AppStrings.get(R.string.ui_switch_to_light_mode_12) else AppStrings.get(R.string.ui_switch_to_dark_mode_13)) },
                                     onClick = {
                                         overflowVisible = false
                                         viewModel.toggleThemeMode()
                                     },
                                 )
                                 DropdownMenuItem(
-                                    text = { Text("排序：${sortLabel(state.sort)}") },
+                                    text = { Text(AppStrings.get(R.string.ui_sort_14, sortLabel(state.sort))) },
                                     onClick = {
                                         overflowVisible = false
                                         sortMenuVisible = true
                                     },
                                 )
                                 DropdownMenuItem(
-                                    text = { Text("设置") },
+                                    text = { Text(AppStrings.get(R.string.settings_title)) },
                                     onClick = {
                                         overflowVisible = false
                                         onOpenSettings()
@@ -275,7 +277,7 @@ fun LibraryScreen(
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Text(
-                            if (state.shelf == ShelfKind.COMIC) "漫画显示" else "书籍显示",
+                            if (state.shelf == ShelfKind.COMIC) AppStrings.get(R.string.ui_comic_display_15) else AppStrings.get(R.string.ui_book_display_16),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.weight(1f),
@@ -290,7 +292,7 @@ fun LibraryScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 20.dp, vertical = 2.dp),
-                        placeholder = { Text("搜索书名或作者") },
+                        placeholder = { Text(AppStrings.get(R.string.library_search_hint)) },
                         singleLine = true,
                         shape = RoundedCornerShape(14.dp),
                     )
@@ -305,7 +307,7 @@ fun LibraryScreen(
                     ) {
                         item {
                             com.lightreader.ui.components.AppChip(
-                                label = "全部",
+                                label = AppStrings.get(R.string.ui_all_18),
                                 selected = state.formatFilter == null,
                                 onClick = { viewModel.setFormatFilter(null) },
                             )
@@ -329,8 +331,8 @@ fun LibraryScreen(
                 contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 // The extended FAB reads as a bare "Button" to accessibility services otherwise:
                 // its label is not exposed in the merged semantics, so the icon carries the name.
-                icon = { Icon(LocalAppIcons.current.add, contentDescription = "导入书籍") },
-                text = { Text("导入书籍") },
+                icon = { Icon(LocalAppIcons.current.add, contentDescription = AppStrings.get(R.string.library_import)) },
+                text = { Text(AppStrings.get(R.string.library_import)) },
             )
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -349,11 +351,11 @@ fun LibraryScreen(
             when {
                 state.loading -> Unit
                 state.shelfBooks.isEmpty() -> EmptyState(
-                    title = if (state.shelf == ShelfKind.COMIC) "漫画架还是空的" else "书架还是空的",
+                    title = if (state.shelf == ShelfKind.COMIC) AppStrings.get(R.string.ui_your_comic_shelf_is_empty_20) else AppStrings.get(R.string.library_empty_title),
                     message = if (state.shelf == ShelfKind.COMIC) {
-                        "点右下角按钮导入 CBZ / ZIP 漫画包：根目录算一章，子文件夹按顺序算章节"
+                        AppStrings.get(R.string.ui_use_the_bottom_right_button_to_import_cbz_zip_co_22)
                     } else {
-                        "点击右下角按钮，从本地导入 EPUB、PDF、TXT、DOCX 等文件"
+                        AppStrings.get(R.string.ui_use_the_bottom_right_button_to_import_local_epub_23)
                     },
                     modifier = Modifier.fillMaxSize(),
                     icon = {
@@ -367,8 +369,8 @@ fun LibraryScreen(
                 )
 
                 state.filtered.isEmpty() -> EmptyState(
-                    title = "没有找到匹配的书籍",
-                    message = "试试其他关键词或清除筛选条件",
+                    title = AppStrings.get(R.string.library_no_match),
+                    message = AppStrings.get(R.string.ui_try_other_keywords_or_clear_the_filters_25),
                     modifier = Modifier.fillMaxSize(),
                     icon = {
                         Icon(
@@ -407,7 +409,7 @@ fun LibraryScreen(
                     },
                 )
                 ListItem(
-                    headlineContent = { Text(if (book.progressPercent > 0f) "继续阅读" else "打开") },
+                    headlineContent = { Text(if (book.progressPercent > 0f) AppStrings.get(R.string.menu_continue) else AppStrings.get(R.string.menu_open)) },
                     modifier = Modifier.clickable {
                         actionsFor = null
                         onOpenBook(book.id)
@@ -415,13 +417,13 @@ fun LibraryScreen(
                 )
                 val otherShelf = if (book.shelfKind == ShelfKind.COMIC) ShelfKind.BOOK else ShelfKind.COMIC
                 ListItem(
-                    headlineContent = { Text("移到${otherShelf.displayName}书架") },
+                    headlineContent = { Text(AppStrings.get(R.string.ui_move_to_28, otherShelf.displayName)) },
                     supportingContent = {
                         Text(
                             text = if (otherShelf == ShelfKind.COMIC) {
-                                "在漫画书架里按连续条漫阅读（PDF、图片也适用）"
+                                AppStrings.get(R.string.ui_read_as_a_continuous_comic_including_pdf_and_ima_29)
                             } else {
-                                "回到书籍书架，按原来的分页方式阅读"
+                                AppStrings.get(R.string.ui_return_to_the_book_shelf_and_the_original_paging_30)
                             },
                             style = MaterialTheme.typography.bodySmall,
                         )
@@ -432,16 +434,16 @@ fun LibraryScreen(
                     },
                 )
                 ListItem(
-                    headlineContent = { Text("添加书签（上次位置）") },
+                    headlineContent = { Text(AppStrings.get(R.string.ui_bookmark_last_position_31)) },
                     modifier = Modifier.clickable {
                         viewModel.addBookmarkAtLastPosition(book)
                         actionsFor = null
                     },
                 )
                 ListItem(
-                    headlineContent = { Text("从书架移除") },
+                    headlineContent = { Text(AppStrings.get(R.string.menu_remove_shelf)) },
                     supportingContent = {
-                        Text("不会删除设备上的原文件", style = MaterialTheme.typography.bodySmall)
+                        Text(AppStrings.get(R.string.ui_keeps_the_original_file_on_your_device_33), style = MaterialTheme.typography.bodySmall)
                     },
                     modifier = Modifier.clickable {
                         actionsFor = null
@@ -450,10 +452,10 @@ fun LibraryScreen(
                 )
                 ListItem(
                     headlineContent = {
-                        Text("删除本地文件", color = MaterialTheme.colorScheme.error)
+                        Text(AppStrings.get(R.string.menu_delete_file), color = MaterialTheme.colorScheme.error)
                     },
                     supportingContent = {
-                        Text("永久删除原文件，无法撤销", style = MaterialTheme.typography.bodySmall)
+                        Text(AppStrings.get(R.string.ui_permanently_deletes_the_original_file_this_canno_35), style = MaterialTheme.typography.bodySmall)
                     },
                     modifier = Modifier.clickable {
                         actionsFor = null
@@ -467,16 +469,16 @@ fun LibraryScreen(
     removeCandidate?.let { book ->
         AlertDialog(
             onDismissRequest = { removeCandidate = null },
-            title = { Text("从书架移除？") },
-            text = { Text("只移除书架记录、阅读进度和书签，不会删除设备上的原文件。") },
+            title = { Text(AppStrings.get(R.string.remove_shelf_confirm_title)) },
+            text = { Text(AppStrings.get(R.string.ui_removes_the_library_entry_progress_and_bookmarks_37)) },
             confirmButton = {
                 TextButton(onClick = {
                     viewModel.removeFromShelf(book)
                     removeCandidate = null
-                }) { Text("移除") }
+                }) { Text(AppStrings.get(R.string.ui_remove_38)) }
             },
             dismissButton = {
-                TextButton(onClick = { removeCandidate = null }) { Text("取消") }
+                TextButton(onClick = { removeCandidate = null }) { Text(AppStrings.get(R.string.action_cancel)) }
             },
         )
     }
@@ -484,16 +486,16 @@ fun LibraryScreen(
     deleteCandidate?.let { book ->
         AlertDialog(
             onDismissRequest = { deleteCandidate = null },
-            title = { Text("删除本地文件？") },
-            text = { Text("将永久删除设备上的原文件「${book.fileName}」，此操作无法撤销。") },
+            title = { Text(AppStrings.get(R.string.delete_file_confirm_title)) },
+            text = { Text(AppStrings.get(R.string.ui_permanently_delete_from_your_device_this_cannot__41, book.fileName)) },
             confirmButton = {
                 TextButton(onClick = {
                     viewModel.deleteLocalFile(book)
                     deleteCandidate = null
-                }) { Text("删除") }
+                }) { Text(AppStrings.get(R.string.action_delete)) }
             },
             dismissButton = {
-                TextButton(onClick = { deleteCandidate = null }) { Text("取消") }
+                TextButton(onClick = { deleteCandidate = null }) { Text(AppStrings.get(R.string.action_cancel)) }
             },
         )
     }
@@ -550,7 +552,7 @@ private fun LibraryContent(
                     }
                     item(span = { GridItemSpan(maxLineSpan) }) {
                         SectionRow(
-                            title = if (state.shelf == ShelfKind.COMIC) "全部漫画" else "全部书籍",
+                            title = if (state.shelf == ShelfKind.COMIC) AppStrings.get(R.string.ui_all_comics_43) else AppStrings.get(R.string.section_all),
                             layout = state.layout,
                             onLayoutChange = onLayoutChange,
                         )
@@ -581,7 +583,7 @@ private fun LibraryContent(
                     }
                     item {
                         SectionRow(
-                            title = if (state.shelf == ShelfKind.COMIC) "全部漫画" else "全部书籍",
+                            title = if (state.shelf == ShelfKind.COMIC) AppStrings.get(R.string.ui_all_comics_43) else AppStrings.get(R.string.section_all),
                             layout = state.layout,
                             onLayoutChange = onLayoutChange,
                             modifier = Modifier.padding(horizontal = 20.dp),
@@ -610,16 +612,16 @@ private fun ColumnCountMenu(columns: Int, onSelect: (Int) -> Unit) {
     Box {
         TextButton(
             onClick = { expanded = true },
-            modifier = Modifier.semantics { contentDescription = "调节每行显示数量" },
+            modifier = Modifier.semantics { contentDescription = AppStrings.get(R.string.ui_change_items_per_row_45) },
         ) {
             Icon(LocalAppIcons.current.grid, contentDescription = null, modifier = Modifier.size(16.dp))
             Spacer(Modifier.width(6.dp))
-            Text(if (columns == 0) "每行：自动" else "每行 $columns 个")
+            Text(if (columns == 0) AppStrings.get(R.string.ui_items_per_row_auto_46) else AppStrings.get(R.string.ui_per_row_47, columns))
         }
         DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
             (listOf(0) + (2..6)).forEach { count ->
                 DropdownMenuItem(
-                    text = { Text(if (count == 0) "自动适应屏幕" else "每行 $count 个") },
+                    text = { Text(if (count == 0) AppStrings.get(R.string.ui_fit_to_screen_automatically_48) else AppStrings.get(R.string.ui_per_row_47, count)) },
                     modifier = Modifier.semantics { selected = columns == count },
                     onClick = { onSelect(count); expanded = false },
                 )
@@ -685,7 +687,7 @@ private fun ShelfKindSwitch(
                         )
                         .clickable { if (!selected) onChange(kind) }
                         .semantics {
-                            contentDescription = "切换到${kind.displayName}书架"
+                            contentDescription = AppStrings.get(R.string.ui_switch_to_50, kind.displayName)
                             this.selected = selected
                         }
                         .padding(horizontal = 16.dp, vertical = 6.dp),
@@ -746,7 +748,7 @@ private fun LayoutSwitch(layout: LibraryLayout, onChange: (LibraryLayout) -> Uni
                 ) {
                     Icon(
                         imageVector = icon,
-                        contentDescription = if (value == LibraryLayout.GRID) "网格" else "列表",
+                        contentDescription = if (value == LibraryLayout.GRID) AppStrings.get(R.string.library_grid) else AppStrings.get(R.string.library_list),
                         modifier = Modifier.size(16.dp),
                         tint = if (selected) {
                             MaterialTheme.colorScheme.primary
@@ -839,7 +841,7 @@ private fun ContinueReadingCard(
             Spacer(Modifier.width(16.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = "继续阅读",
+                    text = AppStrings.get(R.string.menu_continue),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.primary,
                 )
@@ -896,11 +898,11 @@ private val importMimeTypes = arrayOf(
 )
 
 private fun sortLabel(sort: LibrarySort): String = when (sort) {
-    LibrarySort.RECENT -> "最近阅读"
-    LibrarySort.ADDED -> "最近添加"
-    LibrarySort.TITLE -> "按书名"
-    LibrarySort.AUTHOR -> "按作者"
-    LibrarySort.PROGRESS -> "按进度"
+    LibrarySort.RECENT -> AppStrings.get(R.string.section_recent)
+    LibrarySort.ADDED -> AppStrings.get(R.string.sort_added)
+    LibrarySort.TITLE -> AppStrings.get(R.string.sort_title)
+    LibrarySort.AUTHOR -> AppStrings.get(R.string.sort_author)
+    LibrarySort.PROGRESS -> AppStrings.get(R.string.sort_progress)
 }
 
 @Composable

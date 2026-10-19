@@ -79,8 +79,9 @@ interface ReflowableDocument : OpenedDocument {
 
     suspend fun loadChapter(index: Int): ChapterContent
 
-    /** Resolves resources (images, CSS, fonts) referenced by the generated chapter HTML. */
-    suspend fun resolveResource(path: String): ReaderResource?
+    /** Blocking local I/O, called on WebView's request worker, never on the main thread. */
+    @androidx.annotation.WorkerThread
+    fun resolveResource(path: String): ReaderResource?
 
     /**
      * Streams the document and reports every occurrence of [query]. Implementations must stay

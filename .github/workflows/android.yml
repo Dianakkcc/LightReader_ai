@@ -1,0 +1,45 @@
+name: Android build
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - run: chmod +x gradlew
+      - name: Check source package
+        run: python3 tools/release/check_source_package.py
+      - name: Tests, strict lint and unsigned release
+        run: ./gradlew --no-daemon :app:testDebugUnitTest :app:lintRelease :app:assembleRelease :app:compileDebugAndroidTestKotlin
+      - name: Check dependency inventory
+        run: |
+          ./gradlew --no-daemon --init-script tools/licenses/inventory.init.gradle.kts :app:exportThirdPartyInventory
+          python3 tools/licenses/check_inventory.py
+      - name: Test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            app/build/reports/tests/
+            app/build/test-results/
+            app/build/reports/lint-results-*
+      - name: Unsigned APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: lightreader-release-unsigned
+          path: app/build/outputs/apk/release/*-unsigned.apk
+          if-no-files-found: error

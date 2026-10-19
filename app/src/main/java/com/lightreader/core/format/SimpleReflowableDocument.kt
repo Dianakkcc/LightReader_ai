@@ -18,7 +18,7 @@ class SimpleReflowableDocument(
     chapters: List<ChapterRef>,
     override val totalChars: Long,
     private val chapterLoader: suspend (Int) -> ChapterContent,
-    private val resourceResolver: (suspend (String) -> ReaderResource?)? = null,
+    private val resourceResolver: ((String) -> ReaderResource?)? = null,
     private val closer: (() -> Unit)? = null,
 ) : ReflowableDocument {
 
@@ -33,7 +33,7 @@ class SimpleReflowableDocument(
 
     override suspend fun loadChapter(index: Int): ChapterContent = chapterLoader(index)
 
-    override suspend fun resolveResource(path: String): ReaderResource? =
+    override fun resolveResource(path: String): ReaderResource? =
         resourceResolver?.invoke(path)
 
     override suspend fun search(query: String, limit: Int): List<SearchHit> =

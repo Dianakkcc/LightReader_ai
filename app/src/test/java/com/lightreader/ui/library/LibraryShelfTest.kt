@@ -3,9 +3,14 @@ package com.lightreader.ui.library
 import android.content.Context
 import android.net.Uri
 import androidx.test.core.app.ApplicationProvider
+import com.lightreader.TestViewModels
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancelAndJoin
+import kotlinx.coroutines.runBlocking
 import com.lightreader.AppContainer
 import com.lightreader.core.data.db.BookEntity
 import com.lightreader.core.model.ShelfKind
+import com.lightreader.core.data.TestPreferenceStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
@@ -29,23 +34,34 @@ import org.robolectric.annotation.Config
  * does to an entry.
  */
 @OptIn(ExperimentalCoroutinesApi::class)
+@org.robolectric.annotation.SQLiteMode(org.robolectric.annotation.SQLiteMode.Mode.NATIVE)
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
 class LibraryShelfTest {
 
+    private val owned = TestViewModels()
     private val dispatcher = UnconfinedTestDispatcher()
     private lateinit var container: AppContainer
+    private lateinit var preferences: TestPreferenceStore
 
     private val context: Context get() = ApplicationProvider.getApplicationContext()
 
     @Before
     fun setUp() {
         Dispatchers.setMain(dispatcher)
-        container = AppContainer(context, installBuiltinFonts = false)
+        preferences = TestPreferenceStore(context)
+        container = AppContainer(
+            context, installBuiltinFonts = false,
+            settingsStoreOverride = preferences.settings,
+        )
     }
 
     @After
     fun tearDown() {
+        owned.close()
+        runBlocking { container.appScope.coroutineContext[Job]?.cancelAndJoin() }
+        container.database.close()
+        preferences.close()
         Dispatchers.resetMain()
     }
 
@@ -53,7 +69,7 @@ class LibraryShelfTest {
     fun `the switch filters the shelf and the long press action moves a book`() = runTest {
         insertBook("comic.cbz", "漫画书", "comic")
         insertBook("novel.epub", "小说", "epub")
-        val viewModel = LibraryViewModel(container)
+        val viewModel = owned.own(LibraryViewModel(container))
 
         val loaded = awaitState(viewModel) { it.books.size == 2 }
         // Text format on the book shelf, archive on the comic shelf, decided at import time.
@@ -112,7 +128,7 @@ class LibraryShelfTest {
                 library = com.lightreader.core.model.LibrarySettings(gridColumns = 2),
             ),
         )
-        val viewModel = LibraryViewModel(container)
+        val viewModel = owned.own(LibraryViewModel(container))
         awaitState(viewModel) { !it.loading && it.gridColumns == 2 && it.shelf == ShelfKind.BOOK }
         viewModel.setShelf(ShelfKind.BOOK)
         viewModel.setColumns(5)
@@ -126,7 +142,7 @@ class LibraryShelfTest {
                 it.library.comicGridColumns == 4 && it.library.shelf == ShelfKind.COMIC
             }
         }
-        val reopened = LibraryViewModel(container)
+        val reopened = owned.own(LibraryViewModel(container))
         val restored = awaitState(reopened) {
             it.gridColumns == 5 && it.comicGridColumns == 4 && it.shelf == ShelfKind.COMIC
         }

@@ -16,16 +16,19 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
+@org.robolectric.annotation.SQLiteMode(org.robolectric.annotation.SQLiteMode.Mode.NATIVE)
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
 class ReadingRepositoryTest {
 
     private lateinit var database: AppDatabase
     private lateinit var repository: ReadingRepository
+    private lateinit var preferences: TestPreferenceStore
     private val context: Context get() = ApplicationProvider.getApplicationContext()
 
     @Before
     fun setUp() {
+        preferences = TestPreferenceStore(context)
         database = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java)
             .allowMainThreadQueries()
             .build()
@@ -33,12 +36,13 @@ class ReadingRepositoryTest {
             context = context,
             database = database,
             workspace = BookWorkspace(context),
-            settingsStore = SettingsStore(context),
+            settingsStore = preferences.settings,
         )
     }
 
     @After
     fun tearDown() {
+        preferences.close()
         database.close()
     }
 

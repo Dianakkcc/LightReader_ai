@@ -33,10 +33,10 @@ object Formatters {
         if (millis == null || millis <= 0) return "—"
         val diff = now - millis
         return when {
-            diff < TimeUnit.MINUTES.toMillis(1) -> "刚刚"
-            diff < TimeUnit.HOURS.toMillis(1) -> "${TimeUnit.MILLISECONDS.toMinutes(diff)} 分钟前"
-            diff < TimeUnit.DAYS.toMillis(1) -> "${TimeUnit.MILLISECONDS.toHours(diff)} 小时前"
-            diff < TimeUnit.DAYS.toMillis(30) -> "${TimeUnit.MILLISECONDS.toDays(diff)} 天前"
+            diff < TimeUnit.MINUTES.toMillis(1) -> AppStrings.get(com.lightreader.R.string.time_just_now)
+            diff < TimeUnit.HOURS.toMillis(1) -> AppStrings.get(com.lightreader.R.string.time_minutes_ago, TimeUnit.MILLISECONDS.toMinutes(diff))
+            diff < TimeUnit.DAYS.toMillis(1) -> AppStrings.get(com.lightreader.R.string.time_hours_ago, TimeUnit.MILLISECONDS.toHours(diff))
+            diff < TimeUnit.DAYS.toMillis(30) -> AppStrings.get(com.lightreader.R.string.time_days_ago, TimeUnit.MILLISECONDS.toDays(diff))
             else -> dateTime(millis)
         }
     }

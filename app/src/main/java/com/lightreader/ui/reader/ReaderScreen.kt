@@ -1,5 +1,7 @@
 ﻿package com.lightreader.ui.reader
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -77,7 +79,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
@@ -174,7 +176,7 @@ fun ReaderScreen(
             viewModel.importFont(uri) { success ->
                 scope.launch {
                     snackbarHostState.showToast(
-                        if (success) "字体已导入" else "字体文件无法解析，已取消导入",
+                        if (success) AppStrings.get(R.string.ui_font_imported_114) else AppStrings.get(R.string.settings_font_invalid),
                     )
                 }
             }
@@ -192,7 +194,7 @@ fun ReaderScreen(
     }
 
     val rememberOffsetProvider = remember { { viewModel.initialOffsetForRender() } }
-    val resolverImpl: suspend (String) -> com.lightreader.core.model.ReaderResource? =
+    val resolverImpl: (String) -> com.lightreader.core.model.ReaderResource? =
         { path -> viewModel.resolveResource(path) }
     val rememberResolver = remember { resolverImpl }
     val rememberLocationCallback = remember {
@@ -427,16 +429,16 @@ fun ReaderScreen(
                             }) {
                                 Icon(
                                     LocalAppIcons.current.back,
-                                    contentDescription = "返回书架",
+                                    contentDescription = AppStrings.get(R.string.ui_back_to_library_116),
                                 )
                             }
                         },
                         actions = {
                             IconButton(onClick = { openPanel(ReaderPanel.SEARCH) }) {
-                                Icon(LocalAppIcons.current.search, contentDescription = "搜索")
+                                Icon(LocalAppIcons.current.search, contentDescription = AppStrings.get(R.string.reader_search))
                             }
                             IconButton(onClick = { openPanel(ReaderPanel.BOOKMARKS) }) {
-                                Icon(LocalAppIcons.current.bookmarkOutline, contentDescription = "书签列表")
+                                Icon(LocalAppIcons.current.bookmarkOutline, contentDescription = AppStrings.get(R.string.ui_bookmark_list_117))
                             }
                         },
                         colors = TopAppBarDefaults.topAppBarColors(
@@ -453,9 +455,9 @@ fun ReaderScreen(
                         modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars),
                         palette = palette,
                         chapterLabel = if (state.isPagedDocument) {
-                            "第 ${state.pageIndex + 1} / ${state.pageCount.coerceAtLeast(1)} 页"
+                            AppStrings.get(R.string.ui_page_118, state.pageIndex + 1, state.pageCount.coerceAtLeast(1))
                         } else {
-                            state.currentChapterTitle.ifBlank { "第 ${state.chapterIndex + 1} 节" }
+                            state.currentChapterTitle.ifBlank { AppStrings.get(R.string.ui_section_77, state.chapterIndex + 1) }
                         },
                         percentage = state.percentage,
                         seekValue = seekValue,
@@ -723,31 +725,31 @@ private fun ReaderBottomBar(
             ) {
                 QuickAction(
                     LocalAppIcons.current.list,
-                    "目录",
+                    AppStrings.get(R.string.reader_toc),
                     onToc,
                     modifier = Modifier.weight(1f),
                 )
                 QuickAction(
                     if (bookmarked) LocalAppIcons.current.bookmark else LocalAppIcons.current.bookmarkOutline,
-                    if (bookmarked) "已加书签" else "书签",
+                    if (bookmarked) AppStrings.get(R.string.ui_bookmark_added_120) else AppStrings.get(R.string.reader_bookmarks),
                     onBookmark,
                     modifier = Modifier.weight(1f),
                 )
                 QuickAction(
                     LocalAppIcons.current.fontSize,
-                    "字号",
+                    AppStrings.get(R.string.settings_font_size),
                     onFontSize,
                     modifier = Modifier.weight(1f),
                 )
                 QuickAction(
                     LocalAppIcons.current.palette,
-                    "背景",
+                    AppStrings.get(R.string.ui_background_82),
                     onTheme,
                     modifier = Modifier.weight(1f),
                 )
                 QuickAction(
                     LocalAppIcons.current.more,
-                    "更多",
+                    AppStrings.get(R.string.action_more),
                     onMore,
                     modifier = Modifier.weight(1f),
                 )
@@ -814,16 +816,16 @@ private fun OpenErrorDialog(
     var showDetails by remember { mutableStateOf(false) }
     AlertDialog(
         onDismissRequest = onClose,
-        title = { Text("无法打开此文件") },
+        title = { Text(AppStrings.get(R.string.error_open_title)) },
         text = {
             Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-                Text("可能原因：")
-                Text("• 文件已损坏或不完整")
-                Text("• 格式不受支持")
-                Text("• 文件权限已失效")
-                Text("• 文件已被移动或删除")
+                Text(AppStrings.get(R.string.error_reason_title))
+                Text(AppStrings.get(R.string.ui_the_file_is_damaged_or_incomplete_123))
+                Text(AppStrings.get(R.string.ui_the_format_is_unsupported_124))
+                Text(AppStrings.get(R.string.ui_file_permission_is_no_longer_valid_125))
+                Text(AppStrings.get(R.string.ui_the_file_was_moved_or_deleted_126))
                 TextButton(onClick = { showDetails = !showDetails }) {
-                    Text(if (showDetails) "隐藏技术详情" else "技术详情")
+                    Text(if (showDetails) AppStrings.get(R.string.ui_hide_technical_details_127) else AppStrings.get(R.string.error_details))
                 }
                 if (showDetails) {
                     Text(
@@ -834,8 +836,8 @@ private fun OpenErrorDialog(
                 }
             }
         },
-        confirmButton = { TextButton(onClick = onPickAnotherFile) { Text("重新选择文件") } },
-        dismissButton = { TextButton(onClick = onClose) { Text("关闭") } },
+        confirmButton = { TextButton(onClick = onPickAnotherFile) { Text(AppStrings.get(R.string.error_pick_again)) } },
+        dismissButton = { TextButton(onClick = onClose) { Text(AppStrings.get(R.string.action_close)) } },
     )
 }
 

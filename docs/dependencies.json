@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "appVersion": "2.8.1",
-  "reviewedAt": "2026-10-07",
+  "appVersion": "2.9.0",
+  "reviewedAt": "2026-10-19",
   "scope": "releaseRuntimeClasspath, debugUnitTestRuntimeClasspath, debugAndroidTestRuntimeClasspath (resolved modules, not a build-tool SBOM)",
   "dependencies": [
     {
       "coordinate": "androidx.activity:activity-compose:1.9.3",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -34,9 +34,9 @@
     {
       "coordinate": "androidx.activity:activity-ktx:1.9.3",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -61,9 +61,9 @@
     {
       "coordinate": "androidx.activity:activity:1.9.3",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -86,11 +86,11 @@
       ]
     },
     {
-      "coordinate": "androidx.annotation:annotation-experimental:1.4.1",
+      "coordinate": "androidx.annotation:annotation-experimental:1.5.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -101,23 +101,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/annotation#1.4.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.5.0/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.annotation_annotation-experimental_1.5.0__72993bc20bd6__LICENSE.txt"
       ],
       "artifacts": [
         {
-          "file": "annotation-experimental-1.4.1.aar",
-          "sha256": "6bd4c7c7476f8260cd3bdbb81183583e93fc9f790c27dea7dc314181cbf87aa0"
+          "file": "annotation-experimental-1.5.0.aar",
+          "sha256": "02b0a4256618f85386c92e5cec166dc7f300820888a290227a3c0c65b82cbb36"
         }
       ]
     },
     {
-      "coordinate": "androidx.annotation:annotation-jvm:1.8.1",
+      "coordinate": "androidx.annotation:annotation-jvm:1.9.1",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -128,23 +129,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/annotation#1.8.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.9.1/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.annotation_annotation-jvm_1.9.1__d9c51321a0a5__LICENSE.txt"
       ],
       "artifacts": [
         {
-          "file": "annotation-jvm-1.8.1.jar",
-          "sha256": "9aab326d9492800991854360ac248f493ce7f7c3183519309b78ace9e240f6f6"
+          "file": "annotation-jvm-1.9.1.jar",
+          "sha256": "1e343917ebf27ba96fe4dc52b1cad7fd32b738fbc6355bb6cd5b3b305d7212d0"
         }
       ]
     },
     {
       "coordinate": "androidx.arch.core:core-common:2.2.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -169,9 +171,9 @@
     {
       "coordinate": "androidx.arch.core:core-runtime:2.2.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -196,9 +198,9 @@
     {
       "coordinate": "androidx.autofill:autofill:1.0.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -221,11 +223,11 @@
       ]
     },
     {
-      "coordinate": "androidx.collection:collection-jvm:1.4.4",
+      "coordinate": "androidx.collection:collection-jvm:1.5.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -236,23 +238,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/collection#1.4.4",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/collection/collection-jvm/1.5.0/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.collection_collection-jvm_1.5.0__d87b79584cfd__LICENSE.txt"
       ],
       "artifacts": [
         {
-          "file": "collection-jvm-1.4.4.jar",
-          "sha256": "539a43428df8a337622fb781401f5f0cdcd52d8b3615f0085af51c90002ff333"
+          "file": "collection-jvm-1.5.0.jar",
+          "sha256": "70b35924e4babcdffa37d0e575ee039c56a2d97123342624c48b603233704341"
         }
       ]
     },
     {
-      "coordinate": "androidx.collection:collection-ktx:1.4.4",
+      "coordinate": "androidx.collection:collection-ktx:1.5.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -263,22 +266,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/collection#1.4.4",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/collection/collection-ktx/1.5.0/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.collection_collection-ktx_1.5.0__403e0954f966__LICENSE.txt"
       ],
       "artifacts": [
         {
-          "file": "collection-ktx-1.4.4.jar",
-          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3"
+          "file": "collection-ktx-1.5.0.jar",
+          "sha256": "939b4a8697640e77d83e4e8b4c4a9d18f8130198c5961194af8dd9db9dc7c353"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.animation:animation-android:1.7.6",
+      "coordinate": "androidx.compose.animation:animation-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -289,22 +293,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.animation_animation-android_1.8.2__ab908a6f26a4__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "animation-release.aar",
-          "sha256": "01f349d54cf9ec41cd0adf5d8c2a869c2c245b8dbb6be5a57e7ebe3d68d31791"
+          "sha256": "407ab5ea6518c6fef659146bf0a507471ded63c5d6528dc95187220027e1f417"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.animation:animation-core-android:1.7.6",
+      "coordinate": "androidx.compose.animation:animation-core-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -315,22 +320,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/animation/animation-core-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.animation_animation-core-android_1.8.2__c92c8d311fcf__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "animation-core-release.aar",
-          "sha256": "9722d4fccd4a9e95910baa16652563ba92a5829f9d6e09194850447e3cd9983a"
+          "sha256": "49af9201eeaf590d889e742bb43dd8e01efa3fbe478cb812f5887f978f400261"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.foundation:foundation-android:1.7.6",
+      "coordinate": "androidx.compose.foundation:foundation-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -341,22 +347,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.foundation_foundation-android_1.8.2__f0cff7586288__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "foundation-release.aar",
-          "sha256": "5ccb96bab040a70f7fdd577faaad75343261c006d42fcc5723a38f50a82f597c"
+          "sha256": "96acc3363c121dfbfddc5cab946f7e45705c1cce98424b50e28edf16d55a3c9e"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.foundation:foundation-layout-android:1.7.6",
+      "coordinate": "androidx.compose.foundation:foundation-layout-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -367,22 +374,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-layout-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.foundation_foundation-layout-android_1__9ab3e2b8997c__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "foundation-layout-release.aar",
-          "sha256": "296e14e2b37f7ba09e4185637f71409199bced21d5a070fe26f6dc6b26d588b6"
+          "sha256": "97d474baf35fe803a086489c32df0eb35154448e091bc6543b34ff17aa529477"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.material3:material3-android:1.3.1",
+      "coordinate": "androidx.compose.material3:material3-android:1.3.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -393,19 +401,19 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.3.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/",
       "licenseFiles": [
         "licenses/Apache-2.0.txt"
       ],
       "artifacts": [
         {
           "file": "material3-release.aar",
-          "sha256": "752473d4ea271f822858c313ec0d857ab05249021906f3005b30f2b1fcd0dcc0"
+          "sha256": "847666d9fc2d4348b6ec76a6a6094f14fb60de631ee4f6992004ec71a4f44336"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.material:material-android:1.7.6",
+      "coordinate": "androidx.compose.material:material-android:1.8.2",
       "scopes": [
         "debugUnitTestRuntimeClasspath"
       ],
@@ -418,22 +426,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.material_material-android_1.8.2__f20a921a0995__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "material-release.aar",
-          "sha256": "739b4547e028a47c391d80e731f7b82dae3f083ca912b1d3612745cb4c288297"
+          "sha256": "70c9ae96dc8db94d5234e91d1af28329101e4b3fb9f2561b6880e8b38688ff74"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.material:material-icons-core-android:1.7.6",
+      "coordinate": "androidx.compose.material:material-icons-core-android:1.7.8",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -444,22 +453,22 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-core-android/1.7.8/",
       "licenseFiles": [
         "licenses/Apache-2.0.txt"
       ],
       "artifacts": [
         {
           "file": "material-icons-core-release.aar",
-          "sha256": "48d182051236b1dfec829b33bf4d3fd06d03c2876d532208e3f7490159d65c46"
+          "sha256": "332c06b25e662cc417fb087e76b8faa5cb249f4992ffa3360084a3d4ab882284"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.material:material-icons-extended-android:1.7.6",
+      "coordinate": "androidx.compose.material:material-icons-extended-android:1.7.8",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -470,22 +479,27 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-icons-extended-android/1.7.8/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.material_material-icons-extended-andro__61d0e5bd8e0b__CopyrightKt.class",
+        "licenses/notices/androidx.compose.material_material-icons-extended-andro__9a182b899d6a__CopyrightKt.class",
+        "licenses/notices/androidx.compose.material_material-icons-extended-andro__b74edbb19125__CopyrightKt.class",
+        "licenses/notices/androidx.compose.material_material-icons-extended-andro__c23ab78e99ab__CopyrightKt.class",
+        "licenses/notices/androidx.compose.material_material-icons-extended-andro__e4841d862f9b__CopyrightKt.class"
       ],
       "artifacts": [
         {
           "file": "material-icons-extended-release.aar",
-          "sha256": "07e97e52f35d789ef475d9c687e5ca46cc54f9a0d4af8e1dca92ac25fb21450c"
+          "sha256": "64e86269f1106848981dd76f0046f81b46f3bd92efb22645de8fd044c0402b61"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.material:material-ripple-android:1.7.6",
+      "coordinate": "androidx.compose.material:material-ripple-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -496,23 +510,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/material/material-ripple-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.material_material-ripple-android_1.8.2__72e6e7a1018f__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "material-ripple-release.aar",
-          "sha256": "4f4b176d09191141e43023c85bb9f5a7de8f519efdd90c3d0a7dc953b3b2a8da"
+          "sha256": "eff3802ab6a9c4f2ad6dd15539fc9f47e385dfae656efdca89b8716d744140a1"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.runtime:runtime-android:1.7.6",
+      "coordinate": "androidx.compose.runtime:runtime-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -523,23 +538,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.runtime_runtime-android_1.8.2__358556a76512__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "runtime-release.aar",
-          "sha256": "482942683274e1961727b2a76d68fe4ab4abb8145fd8b3146142144ce0b25311"
+          "sha256": "3db5d4ffb54df029e71fb22d260d03a7793dd0b7b38194bf99289a1289a2d851"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.runtime:runtime-saveable-android:1.7.6",
+      "coordinate": "androidx.compose.runtime:runtime-saveable-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -550,23 +566,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/runtime/runtime-saveable-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.runtime_runtime-saveable-android_1.8.2__d2a326226404__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "runtime-saveable-release.aar",
-          "sha256": "802c98303c250a91b89d6b703c3eab73bff6cd220a85fdd10e17ca126f954879"
+          "sha256": "45189b6b3e3c4fff7d6a8200de278cde73d508d712e6f9f3fa896126c5cab5f8"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -577,23 +594,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-android_1.8.2__82627094942f__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-release.aar",
-          "sha256": "42df06e3390808c85256a7efd74d448da71cbc168b41497a30535045c926f5b0"
+          "sha256": "7b2e0aff2b575004536e9c7634b51868545d4873e4627432878835b0a7e56851"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-geometry-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-geometry-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -604,23 +622,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-geometry-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-geometry-android_1.8.2__226367fa6e82__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-geometry-release.aar",
-          "sha256": "63eb3d049a8c819e3805d51ce15b9203249ce960ecfd53251126592047bc2ff0"
+          "sha256": "89f007fce695ec260dea4ab7e3fbb8216a49523203459e2bc51e8933be51da0e"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-graphics-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-graphics-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -631,22 +650,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-graphics-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-graphics-android_1.8.2__43655553efce__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-graphics-release.aar",
-          "sha256": "00c96a2e54b03bc0b72b8fc4327bd2a75b689c689aa01295d870141eb9ddddd0"
+          "sha256": "dfe879e55ac0ad953593ace30f8960d0dfca5324f0ed607adb95fca6bb4b911d"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-test-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-test-android:1.8.2",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -657,22 +677,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-test-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-test-android_1.8.2__c602e8b13686__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-test-release.aar",
-          "sha256": "14aa565f814243c88e2fba3dddeb75f45d558483e49709aae27aa8d41b569bc7"
+          "sha256": "8c42dffbd37e66ecb13b7e38ca9176a32f3ece45a3b110b83fde034ac813005e"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-test-junit4-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-test-junit4-android:1.8.2",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -683,19 +704,20 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-test-junit4-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-test-junit4-android_1.8.2__796080de6958__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-test-junit4-release.aar",
-          "sha256": "dabad805dc934c57755aab07c659cbeb7af2eb6310b9944381f8e6339a024128"
+          "sha256": "683500007eeef5aacb4bb2d8a8a5802644060bb376578bc3ced173e4fa4f0bfb"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-test-manifest:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-test-manifest:1.8.2",
       "scopes": [
         "debugUnitTestRuntimeClasspath"
       ],
@@ -708,23 +730,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-test-manifest/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-test-manifest_1.8.2__a68e82ed02cb__LICENSE.txt"
       ],
       "artifacts": [
         {
-          "file": "ui-test-manifest-1.7.6.aar",
-          "sha256": "95fcd7bcde2caead4ae9a88faeef2d75c80621f894d8aaa22632ad084ad693a0"
+          "file": "ui-test-manifest-1.8.2.aar",
+          "sha256": "4ce2851bff85426e64eab8020eca87192f6fc9cb31fad51e7c01ca04f882476a"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-text-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-text-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -735,19 +758,20 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-text-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-text-android_1.8.2__5e8e33bdd3d7__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-text-release.aar",
-          "sha256": "d2291842f1c3e8e70c4cb5c962c0754e463e023fef906f3437c209a096c09ec7"
+          "sha256": "911c40b7cc1cfb96b050dc59a9c5ab62f72570f4ad9062675e22d4df62642da9"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-tooling-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-tooling-android:1.8.2",
       "scopes": [
         "debugUnitTestRuntimeClasspath"
       ],
@@ -760,19 +784,20 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-tooling-android_1.8.2__0b6089f00a6a__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-tooling-release.aar",
-          "sha256": "f34446fdb8bf7594c9ecf037d2661db68becef40d7845415448803f1560bdecb"
+          "sha256": "b749266e0b8d507fe60981ddcf5b64c4f962767b09fbc1217b452d88520513b7"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-tooling-data-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-tooling-data-android:1.8.2",
       "scopes": [
         "debugUnitTestRuntimeClasspath"
       ],
@@ -785,22 +810,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-data-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-tooling-data-android_1.8.2__5f5290ee5f15__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-tooling-data-release.aar",
-          "sha256": "70816bf7083e076ee824193661052efd97a2776fc721c0f5e6956aecf2a0d34e"
+          "sha256": "2325195f0d14ccb4e85466b9f2f18889664074fe0ad66c1b997b7e427f6c721c"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-tooling-preview-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-tooling-preview-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -811,23 +837,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-tooling-preview-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-tooling-preview-android_1.8.2__aaf9f4176c2f__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-tooling-preview-release.aar",
-          "sha256": "800e929cead9d30f079f378eb51fb52cddea2c3575ee8a5442ec6dc8a4adaca1"
+          "sha256": "72a1229beb45cc7d43e4a0929b47ee2d0657a636d49987c346153edeb9d8c5c2"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-unit-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-unit-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -838,23 +865,24 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-unit-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-unit-android_1.8.2__51455ccdbcc1__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-unit-release.aar",
-          "sha256": "9ed6214fdd4da272b0b2582c428f8c3dce5ce6a186c47daaf9fc01aec226a199"
+          "sha256": "4b6f792fce8003607b12db5c3fb969087fd4114b675991d3fb2b05e42cbb5ddd"
         }
       ]
     },
     {
-      "coordinate": "androidx.compose.ui:ui-util-android:1.7.6",
+      "coordinate": "androidx.compose.ui:ui-util-android:1.8.2",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -865,22 +893,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.6",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-util-android/1.8.2/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.compose.ui_ui-util-android_1.8.2__b6ccb6c3fae1__LICENSE.txt"
       ],
       "artifacts": [
         {
           "file": "ui-util-release.aar",
-          "sha256": "f74120949fd8f82fbfbcc3793246108f9554df0f51ecc7fb5d721ac971c4394a"
+          "sha256": "f00e8f04e3b486b9722c04324c2541938162af5ffed67f2d15b472cfed596c9f"
         }
       ]
     },
     {
       "coordinate": "androidx.concurrent:concurrent-futures-ktx:1.1.0",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -905,9 +934,9 @@
     {
       "coordinate": "androidx.concurrent:concurrent-futures:1.1.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -932,9 +961,9 @@
     {
       "coordinate": "androidx.core:core-ktx:1.15.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -960,9 +989,9 @@
     {
       "coordinate": "androidx.core:core:1.15.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -988,9 +1017,9 @@
     {
       "coordinate": "androidx.customview:customview-poolingcontainer:1.0.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1013,10 +1042,10 @@
       ]
     },
     {
-      "coordinate": "androidx.datastore:datastore-android:1.1.1",
+      "coordinate": "androidx.datastore:datastore-android:1.1.7",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1027,22 +1056,22 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/datastore#1.1.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/datastore/datastore-android/1.1.7/",
       "licenseFiles": [
         "licenses/Apache-2.0.txt"
       ],
       "artifacts": [
         {
           "file": "datastore-release.aar",
-          "sha256": "fce724038fea3bdef7b0d1aaf10cda6614b61bec66571750cc9be7048b950119"
+          "sha256": "26c12c6417e7e4cfd36386aa8cc2b9839fe87a6792f820805827bde4d27f9e6e"
         }
       ]
     },
     {
-      "coordinate": "androidx.datastore:datastore-core-android:1.1.1",
+      "coordinate": "androidx.datastore:datastore-core-android:1.1.7",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1053,22 +1082,22 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/datastore#1.1.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/datastore/datastore-core-android/1.1.7/",
       "licenseFiles": [
         "licenses/Apache-2.0.txt"
       ],
       "artifacts": [
         {
           "file": "datastore-core-release.aar",
-          "sha256": "883abc911e4b14119959e44e20a520523f59c303e834d6b325007b3ee5e9cb6c"
+          "sha256": "adca1d7cde73406fcca2a0eeabac63459adc9d1fe201b79ba08711fa2e331984"
         }
       ]
     },
     {
-      "coordinate": "androidx.datastore:datastore-core-okio-jvm:1.1.1",
+      "coordinate": "androidx.datastore:datastore-core-okio-jvm:1.1.7",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1079,22 +1108,22 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/datastore#1.1.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/datastore/datastore-core-okio-jvm/1.1.7/",
       "licenseFiles": [
         "licenses/Apache-2.0.txt"
       ],
       "artifacts": [
         {
-          "file": "datastore-core-okio-jvm-1.1.1.jar",
-          "sha256": "5071d03c7be9555fd81e5bd522b490a06a89694e4b937f307da72bc74e33c34a"
+          "file": "datastore-core-okio-jvm-1.1.7.jar",
+          "sha256": "291506b4fce398249793e327207635bd4df25181d9539808d7181a4abd0875f5"
         }
       ]
     },
     {
-      "coordinate": "androidx.datastore:datastore-preferences-android:1.1.1",
+      "coordinate": "androidx.datastore:datastore-preferences-android:1.1.7",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1105,25 +1134,28 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/datastore#1.1.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/datastore/datastore-preferences-android/1.1.7/",
       "licenseFiles": [
         "licenses/Apache-2.0.txt"
       ],
       "artifacts": [
         {
           "file": "datastore-preferences-release.aar",
-          "sha256": "0f15760838ff0413521ab1596e8ac5c999c3822d1fcc3f38ce6d6f562aeebbac"
+          "sha256": "1b3d703abc765b60517334b04c5b520e6e25168a2f2d73d5b0cd975d20054f8d"
         }
       ]
     },
     {
-      "coordinate": "androidx.datastore:datastore-preferences-core-jvm:1.1.1",
+      "coordinate": "androidx.datastore:datastore-preferences-core-android:1.1.7",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
-      "licenseIds": [
-        "Apache-2.0"
+      "artifacts": [
+        {
+          "file": "datastore-preferences-core-release.aar",
+          "sha256": "31cebf4444b1df57876e695109a0a63c9a93ff05df503d27a3927b86af0cfac0"
+        }
       ],
       "declaredLicenses": [
         {
@@ -1131,22 +1163,71 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/datastore#1.1.1",
+      "licenseIds": [
+        "Apache-2.0"
+      ],
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/datastore/datastore-preferences-core-android/1.1.7/",
       "licenseFiles": [
         "licenses/Apache-2.0.txt"
+      ]
+    },
+    {
+      "coordinate": "androidx.datastore:datastore-preferences-external-protobuf:1.1.7",
+      "scopes": [
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "artifacts": [
         {
-          "file": "datastore-preferences-core-jvm-1.1.1.jar",
-          "sha256": "bd2c7f41cb7d6e857903a03aa4da4dddc831445bd4148f1ac8d0a81f509d0628"
+          "file": "datastore-preferences-external-protobuf-1.1.7.jar",
+          "sha256": "fcb3f373cf743426c85ebb0d3cc644aefaf26f39b7fa55bb90238d41b689eca7"
         }
+      ],
+      "declaredLicenses": [
+        {
+          "name": "BSD-3-Clause",
+          "url": "https://opensource.org/licenses/BSD-3-Clause"
+        }
+      ],
+      "licenseIds": [
+        "BSD-3-Clause"
+      ],
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/datastore/datastore-preferences-external-protobuf/1.1.7/",
+      "licenseFiles": [
+        "licenses/protobuf-4.28.2-BSD.txt"
+      ]
+    },
+    {
+      "coordinate": "androidx.datastore:datastore-preferences-proto:1.1.7",
+      "scopes": [
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
+      ],
+      "artifacts": [
+        {
+          "file": "datastore-preferences-proto-1.1.7.jar",
+          "sha256": "63686a612f39b8ca603bebe3376d55fb6c9ee28a4a5173efa49c89cbcca8a127"
+        }
+      ],
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "licenseIds": [
+        "Apache-2.0"
+      ],
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/datastore/datastore-preferences-proto/1.1.7/",
+      "licenseFiles": [
+        "licenses/Apache-2.0.txt"
       ]
     },
     {
       "coordinate": "androidx.documentfile:documentfile:1.0.1",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1169,11 +1250,11 @@
       ]
     },
     {
-      "coordinate": "androidx.emoji2:emoji2:1.3.0",
+      "coordinate": "androidx.emoji2:emoji2:1.4.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1184,23 +1265,23 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.3.0",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.4.0/",
       "licenseFiles": [
         "licenses/Apache-2.0.txt"
       ],
       "artifacts": [
         {
-          "file": "emoji2-1.3.0.aar",
-          "sha256": "2bf23818b23a996ddaa1b5fd5bb32129daff6bbb2dce15166e2fccdd2010b1a5"
+          "file": "emoji2-1.4.0.aar",
+          "sha256": "433febd3434a45667176c76a64f3f205ca6335a6b544c5b5d57f25a38a375242"
         }
       ]
     },
     {
       "coordinate": "androidx.graphics:graphics-path:1.0.1",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1225,9 +1306,9 @@
     {
       "coordinate": "androidx.interpolator:interpolator:1.0.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1252,8 +1333,8 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-common-java8:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1278,9 +1359,9 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-common-jvm:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1305,9 +1386,9 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-livedata-core:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1332,9 +1413,9 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-process:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1359,9 +1440,9 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-runtime-android:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1386,9 +1467,9 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1413,9 +1494,9 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1440,9 +1521,9 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-viewmodel-android:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1467,8 +1548,8 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1493,9 +1574,9 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1520,9 +1601,9 @@
     {
       "coordinate": "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1547,8 +1628,8 @@
     {
       "coordinate": "androidx.navigation:navigation-common-ktx:2.8.5",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1574,8 +1655,8 @@
     {
       "coordinate": "androidx.navigation:navigation-common:2.8.5",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1601,8 +1682,8 @@
     {
       "coordinate": "androidx.navigation:navigation-compose:2.8.5",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1628,8 +1709,8 @@
     {
       "coordinate": "androidx.navigation:navigation-runtime-ktx:2.8.5",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1655,8 +1736,8 @@
     {
       "coordinate": "androidx.navigation:navigation-runtime:2.8.5",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1680,11 +1761,11 @@
       ]
     },
     {
-      "coordinate": "androidx.profileinstaller:profileinstaller:1.3.1",
+      "coordinate": "androidx.profileinstaller:profileinstaller:1.4.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1695,22 +1776,50 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.3.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/profileinstaller/profileinstaller/1.4.0/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.profileinstaller_profileinstaller_1.4.0__dde0baf5e65a__LICENSE.txt"
       ],
       "artifacts": [
         {
-          "file": "profileinstaller-1.3.1.aar",
-          "sha256": "d0e402ec31f24028a1dc7eb6a0a3f9d9635c1459392cd734396343b73d673948"
+          "file": "profileinstaller-1.4.0.aar",
+          "sha256": "d502141fcce902430f62b674c32aecd0f75262e7ee2cd15c74adb617cd13130a"
         }
       ]
     },
     {
-      "coordinate": "androidx.room:room-common:2.6.1",
+      "coordinate": "androidx.room:room-common-jvm:2.8.5",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
+      ],
+      "artifacts": [
+        {
+          "file": "room-common-jvm-2.8.5.jar",
+          "sha256": "dc7b4e1a75a790f29c97afd5516b8bf8002d9b6e83e295bc569b33566f3b1ec0"
+        }
+      ],
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "licenseIds": [
+        "Apache-2.0"
+      ],
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/room/room-common-jvm/2.8.5/",
+      "licenseFiles": [
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.room_room-common-jvm_2.8.5__bd490c3737fe__LICENSE.txt"
+      ]
+    },
+    {
+      "coordinate": "androidx.room:room-ktx:2.8.5",
+      "scopes": [
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1721,25 +1830,29 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/room#2.6.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/room/room-ktx/2.8.5/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.room_room-ktx_2.8.5__37bc1d2d0fe8__LICENSE.txt"
       ],
       "artifacts": [
         {
-          "file": "room-common-2.6.1.jar",
-          "sha256": "99326d3eeca4a64671bc8802f1e45f4e6b348e8c7faba230c3854d316809ffcf"
+          "file": "room-ktx-2.8.5.aar",
+          "sha256": "9eddc00f8a23a169b7fbbcec72600f3580e15c92fc4fcdbf48fae6ee69247033"
         }
       ]
     },
     {
-      "coordinate": "androidx.room:room-ktx:2.6.1",
+      "coordinate": "androidx.room:room-runtime-android:2.8.5",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
-      "licenseIds": [
-        "Apache-2.0"
+      "artifacts": [
+        {
+          "file": "room-runtime.aar",
+          "sha256": "ab6f951f6e7b63ed419eaf740b34dbe51560532f78289fd9c5dadabf46401dba"
+        }
       ],
       "declaredLicenses": [
         {
@@ -1747,49 +1860,21 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/room#2.6.1",
-      "licenseFiles": [
-        "licenses/Apache-2.0.txt"
-      ],
-      "artifacts": [
-        {
-          "file": "room-ktx-2.6.1.aar",
-          "sha256": "da4c0cba7efcafa29fbeab1db41984238f25c1a33612c1d60d63b995968d70ca"
-        }
-      ]
-    },
-    {
-      "coordinate": "androidx.room:room-runtime:2.6.1",
-      "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
-      ],
       "licenseIds": [
         "Apache-2.0"
       ],
-      "declaredLicenses": [
-        {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
-        }
-      ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/room#2.6.1",
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/room/room-runtime-android/2.8.5/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt"
-      ],
-      "artifacts": [
-        {
-          "file": "room-runtime-2.6.1.aar",
-          "sha256": "69624fd7add6ce5bfcc12362cd427341d2910e277ed5a6fcc46132a4899114d0"
-        }
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.room_room-runtime-android_2.8.5__aaf3f9534efd__LICENSE.txt"
       ]
     },
     {
       "coordinate": "androidx.savedstate:savedstate-ktx:1.2.1",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1814,9 +1899,9 @@
     {
       "coordinate": "androidx.savedstate:savedstate:1.2.1",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1839,13 +1924,16 @@
       ]
     },
     {
-      "coordinate": "androidx.sqlite:sqlite-framework:2.4.0",
+      "coordinate": "androidx.sqlite:sqlite-android:2.6.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
-      "licenseIds": [
-        "Apache-2.0"
+      "artifacts": [
+        {
+          "file": "sqlite.aar",
+          "sha256": "514f8de4f7bdba2fa8d748d2b22fdcdfb623bd3770a667bf0adc0ad259f03ed2"
+        }
       ],
       "declaredLicenses": [
         {
@@ -1853,25 +1941,26 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.4.0",
-      "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+      "licenseIds": [
+        "Apache-2.0"
       ],
-      "artifacts": [
-        {
-          "file": "sqlite-framework-2.4.0.aar",
-          "sha256": "ca6e503322b2e60374c2b36c95c50b16709d9388fe36e80fb23de1fbf7a6eb95"
-        }
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-android/2.6.2/",
+      "licenseFiles": [
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.sqlite_sqlite-android_2.6.2__2782af714d1b__LICENSE.txt"
       ]
     },
     {
-      "coordinate": "androidx.sqlite:sqlite:2.4.0",
+      "coordinate": "androidx.sqlite:sqlite-framework-android:2.6.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
-      "licenseIds": [
-        "Apache-2.0"
+      "artifacts": [
+        {
+          "file": "sqlite-framework.aar",
+          "sha256": "b19125c7fff34222e0f380361fc179ab214e4d82e1a50b0c068ca26c851a6231"
+        }
       ],
       "declaredLicenses": [
         {
@@ -1879,23 +1968,21 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.4.0",
-      "licenseFiles": [
-        "licenses/Apache-2.0.txt"
+      "licenseIds": [
+        "Apache-2.0"
       ],
-      "artifacts": [
-        {
-          "file": "sqlite-2.4.0.aar",
-          "sha256": "bb7fa113112f7e4857496e222e3051d73a910add74bf40761e1bdae55b0216af"
-        }
+      "upstream": "https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-framework-android/2.6.2/",
+      "licenseFiles": [
+        "licenses/Apache-2.0.txt",
+        "licenses/notices/androidx.sqlite_sqlite-framework-android_2.6.2__9cf33cd8c882__LICENSE.txt"
       ]
     },
     {
       "coordinate": "androidx.startup:startup-runtime:1.1.1",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1920,8 +2007,8 @@
     {
       "coordinate": "androidx.test.espresso:espresso-core:3.5.0",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -1996,8 +2083,8 @@
     {
       "coordinate": "androidx.test.ext:junit:1.2.1",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2022,8 +2109,8 @@
     {
       "coordinate": "androidx.test.services:storage:1.5.0",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2048,8 +2135,8 @@
     {
       "coordinate": "androidx.test:annotation:1.0.1",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2074,8 +2161,8 @@
     {
       "coordinate": "androidx.test:core:1.6.1",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2150,8 +2237,8 @@
     {
       "coordinate": "androidx.test:runner:1.5.0",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2176,9 +2263,9 @@
     {
       "coordinate": "androidx.tracing:tracing:1.2.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2203,9 +2290,9 @@
     {
       "coordinate": "androidx.versionedparcelable:versionedparcelable:1.1.1",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2230,8 +2317,8 @@
     {
       "coordinate": "androidx.webkit:webkit:1.12.1",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2458,8 +2545,8 @@
     {
       "coordinate": "com.google.guava:listenablefuture:1.0",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2584,8 +2671,8 @@
     {
       "coordinate": "com.squareup.okio:okio-jvm:3.4.0",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2611,8 +2698,8 @@
     {
       "coordinate": "com.squareup:javawriter:2.1.1",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2637,8 +2724,8 @@
     {
       "coordinate": "com.tom-roush:pdfbox-android:2.0.27.0",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2692,8 +2779,8 @@
     {
       "coordinate": "javax.inject:javax.inject:1",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -2719,8 +2806,8 @@
     {
       "coordinate": "junit:junit:4.13.2",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "EPL-1.0"
@@ -2745,8 +2832,8 @@
     {
       "coordinate": "org.bouncycastle:bcpkix-jdk15to18:1.72",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "MIT-style (Bouncy Castle)"
@@ -2771,8 +2858,8 @@
     {
       "coordinate": "org.bouncycastle:bcprov-jdk15to18:1.72",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "MIT-style (Bouncy Castle)"
@@ -2822,8 +2909,8 @@
     {
       "coordinate": "org.bouncycastle:bcutil-jdk15to18:1.72",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "MIT-style (Bouncy Castle)"
@@ -2873,8 +2960,8 @@
     {
       "coordinate": "org.commonmark:commonmark-ext-gfm-tables:0.24.0",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "BSD-2-Clause"
@@ -2899,8 +2986,8 @@
     {
       "coordinate": "org.commonmark:commonmark:0.24.0",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "BSD-2-Clause"
@@ -2950,8 +3037,8 @@
     {
       "coordinate": "org.hamcrest:hamcrest-core:1.3",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "BSD-3-Clause"
@@ -2976,8 +3063,8 @@
     {
       "coordinate": "org.hamcrest:hamcrest-integration:1.3",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "BSD-3-Clause"
@@ -3002,8 +3089,8 @@
     {
       "coordinate": "org.hamcrest:hamcrest-library:1.3",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "BSD-3-Clause"
@@ -3028,8 +3115,8 @@
     {
       "coordinate": "org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.9.22",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -3055,8 +3142,8 @@
     {
       "coordinate": "org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -3080,65 +3167,10 @@
       ]
     },
     {
-      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22",
+      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
-      ],
-      "licenseIds": [
-        "Apache-2.0"
-      ],
-      "declaredLicenses": [
-        {
-          "name": "The Apache License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
-        }
-      ],
-      "upstream": "https://kotlinlang.org/",
-      "licenseFiles": [
-        "licenses/Apache-2.0.txt",
-        "licenses/kotlin-Apache.txt"
-      ],
-      "artifacts": [
-        {
-          "file": "kotlin-stdlib-jdk7-1.8.22.jar",
-          "sha256": "055f5cb24287fa106100995a7b47ab92126b81e832e875f5fa2cf0bd55693d0b"
-        }
-      ]
-    },
-    {
-      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22",
-      "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
-      ],
-      "licenseIds": [
-        "Apache-2.0"
-      ],
-      "declaredLicenses": [
-        {
-          "name": "The Apache License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
-        }
-      ],
-      "upstream": "https://kotlinlang.org/",
-      "licenseFiles": [
-        "licenses/Apache-2.0.txt",
-        "licenses/kotlin-Apache.txt"
-      ],
-      "artifacts": [
-        {
-          "file": "kotlin-stdlib-jdk8-1.8.22.jar",
-          "sha256": "4198b0eaf090a4f25b6f7e5a59581f4314ba8c9f6cd1d13ee9d348e65ed8f707"
-        }
-      ]
-    },
-    {
-      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib:2.0.21",
-      "scopes": [
-        "releaseRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -3149,24 +3181,76 @@
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "upstream": "https://kotlinlang.org/",
+      "upstream": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.0/",
       "licenseFiles": [
-        "licenses/Apache-2.0.txt",
-        "licenses/kotlin-Apache.txt"
+        "licenses/Apache-2.0.txt"
       ],
       "artifacts": [
         {
-          "file": "kotlin-stdlib-2.0.21.jar",
-          "sha256": "f31cc53f105a7e48c093683bbd5437561d1233920513774b470805641bedbc09"
+          "file": "kotlin-stdlib-jdk7-1.8.0.jar",
+          "sha256": "4c889d1d9803f5f2eb6c1592a6b7e62369ac7660c9eee15aba16fec059163666"
+        }
+      ]
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0",
+      "scopes": [
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
+      ],
+      "licenseIds": [
+        "Apache-2.0"
+      ],
+      "declaredLicenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "upstream": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.0/",
+      "licenseFiles": [
+        "licenses/Apache-2.0.txt"
+      ],
+      "artifacts": [
+        {
+          "file": "kotlin-stdlib-jdk8-1.8.0.jar",
+          "sha256": "05b62804441b0c9a1920b6b7d5cf7329a4e24b6258478e32b1f046ca01900946"
+        }
+      ]
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib:2.1.20",
+      "scopes": [
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
+      ],
+      "licenseIds": [
+        "Apache-2.0"
+      ],
+      "declaredLicenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "upstream": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.20/",
+      "licenseFiles": [
+        "licenses/Apache-2.0.txt"
+      ],
+      "artifacts": [
+        {
+          "file": "kotlin-stdlib-2.1.20.jar",
+          "sha256": "1bcc74e8ce84e2c25eaafde10f1248349cce3062b6e36978cbeec610db1e930a"
         }
       ]
     },
     {
       "coordinate": "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -3191,9 +3275,9 @@
     {
       "coordinate": "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.9.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -3218,8 +3302,8 @@
     {
       "coordinate": "org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.9.0",
       "scopes": [
-        "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -3244,8 +3328,8 @@
     {
       "coordinate": "org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -3270,8 +3354,8 @@
     {
       "coordinate": "org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.7.3",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -3296,9 +3380,9 @@
     {
       "coordinate": "org.jetbrains:annotations:23.0.0",
       "scopes": [
-        "releaseRuntimeClasspath",
+        "debugAndroidTestRuntimeClasspath",
         "debugUnitTestRuntimeClasspath",
-        "debugAndroidTestRuntimeClasspath"
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "Apache-2.0"
@@ -3321,10 +3405,10 @@
       ]
     },
     {
-      "coordinate": "org.jsoup:jsoup:1.18.3",
+      "coordinate": "org.jsoup:jsoup:1.23.2",
       "scopes": [
-        "releaseRuntimeClasspath",
-        "debugUnitTestRuntimeClasspath"
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
       ],
       "licenseIds": [
         "MIT"
@@ -3335,15 +3419,42 @@
           "url": "https://jsoup.org/license"
         }
       ],
-      "upstream": "https://jsoup.org/",
+      "upstream": "https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.23.2/",
       "licenseFiles": [
-        "licenses/notices/jsoup-7b175df01644.txt"
+        "licenses/notices/org.jsoup_jsoup_1.23.2__f7c6a1039861__LICENSE"
       ],
       "artifacts": [
         {
-          "file": "jsoup-1.18.3.jar",
-          "sha256": "5be1ccd3228ae5fd6eed1bd6d827bac2bc65b91c20e9957d16ea65f739f15302"
+          "file": "jsoup-1.23.2.jar",
+          "sha256": "e9d8c856856680427f096d156f02a414289985c930998fcb519ce5be39b42003"
         }
+      ]
+    },
+    {
+      "coordinate": "org.jspecify:jspecify:1.0.0",
+      "scopes": [
+        "debugAndroidTestRuntimeClasspath",
+        "debugUnitTestRuntimeClasspath",
+        "releaseRuntimeClasspath"
+      ],
+      "artifacts": [
+        {
+          "file": "jspecify-1.0.0.jar",
+          "sha256": "1fad6e6be7557781e4d33729d49ae1cdc8fdda6fe477bb0cc68ce351eafdfbab"
+        }
+      ],
+      "declaredLicenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "licenseIds": [
+        "Apache-2.0"
+      ],
+      "upstream": "https://repo.maven.apache.org/maven2/org/jspecify/jspecify/1.0.0/",
+      "licenseFiles": [
+        "licenses/Apache-2.0.txt"
       ]
     },
     {

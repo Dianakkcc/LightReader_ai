@@ -8,6 +8,7 @@ class LightReaderApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        com.lightreader.core.util.AppStrings.initialize(this)
         instance = this
     }
 

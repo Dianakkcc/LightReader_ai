@@ -1,5 +1,7 @@
 ﻿package com.lightreader.ui.theme
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -13,15 +15,17 @@ import androidx.core.graphics.ColorUtils
  * accent plus one paper tint, so adding a theme is one line - and every theme gets a light and a
  * dark variant that stay in the same family.
  */
-enum class AppPalette(val id: String, val label: String) {
-    BLUE("blue", "海蓝"),
-    ROSE("rose", "樱粉"),
-    MINT("mint", "薄荷"),
-    LILAC("lilac", "香芋"),
-    SUNSET("sunset", "暖橙"),
-    FOREST("forest", "森绿"),
-    JIARAN("jiaran", "嘉然限定"),
+enum class AppPalette(val id: String, private val labelRes: Int) {
+    BLUE("blue", R.string.ui_ocean_245),
+    ROSE("rose", R.string.ui_rose_182),
+    MINT("mint", R.string.ui_mint_183),
+    LILAC("lilac", R.string.ui_lilac_185),
+    SUNSET("sunset", R.string.ui_sunset_246),
+    FOREST("forest", R.string.ui_forest_247),
+    JIARAN("jiaran", R.string.ui_diana_special_248),
     ;
+
+    val label: String get() = AppStrings.get(labelRes)
 
     companion object {
         fun fromId(id: String?): AppPalette = entries.firstOrNull { it.id == id } ?: BLUE
@@ -34,13 +38,15 @@ private data class PaletteSeed(val accent: Color, val paper: Color)
  * Colour of the shelf / settings canvas. The palette above tints the whole chrome, which leaves a
  * slightly coloured page even when the user wants plain paper - this is the knob for that.
  */
-enum class BackgroundTone(val id: String, val label: String) {
+enum class BackgroundTone(val id: String, private val labelRes: Int) {
     /** Let the palette decide (soft tint of the accent). */
-    DEFAULT("default", "跟随配色"),
-    WHITE("white", "纯白"),
-    CREAM("cream", "淡米色"),
-    GREY("grey", "浅灰"),
+    DEFAULT("default", R.string.ui_follow_palette_249),
+    WHITE("white", R.string.ui_white_250),
+    CREAM("cream", R.string.ui_cream_251),
+    GREY("grey", R.string.ui_gray_252),
     ;
+
+    val label: String get() = AppStrings.get(labelRes)
 
     companion object {
         fun fromId(id: String?): BackgroundTone = entries.firstOrNull { it.id == id } ?: DEFAULT

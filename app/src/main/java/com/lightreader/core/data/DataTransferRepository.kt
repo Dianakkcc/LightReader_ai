@@ -101,13 +101,15 @@ class DataTransferRepository(
         )
     }
 
-    private suspend fun applyBackup(backup: BackupFile): RestoreStats {
+    internal suspend fun applyBackup(backup: BackupFile): RestoreStats {
         var matched = 0
         var bookmarks = 0
+        // Read once: URI matching is exact; filename fallback must be unambiguous.
+        val library = database.bookDao().observeAll().first()
+        val byUri = library.associateBy { it.uri }
+        val byFileName = library.groupBy { it.fileName }
         backup.books.forEach { entry ->
-            val book = database.bookDao().findByUri(entry.uri)
-                ?: database.bookDao().observeAll().first()
-                    .firstOrNull { it.fileName == entry.fileName }
+            val book = byUri[entry.uri] ?: byFileName[entry.fileName]?.singleOrNull()
             if (book != null) {
                 matched++
                 entry.shelfKind?.let { kind ->

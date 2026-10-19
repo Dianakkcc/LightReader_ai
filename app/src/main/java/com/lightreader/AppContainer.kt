@@ -31,6 +31,8 @@ class AppContainer(
     context: Context,
     /** Tests can skip copying the bundled fonts into private storage. */
     installBuiltinFonts: Boolean = true,
+    /** Tests can give each sandbox its own managed preference scope and file. */
+    settingsStoreOverride: SettingsStore? = null,
 ) {
 
     val applicationContext: Context = context.applicationContext
@@ -39,7 +41,7 @@ class AppContainer(
 
     val database: AppDatabase = AppDatabase.create(applicationContext)
 
-    val settingsStore: SettingsStore = SettingsStore(applicationContext)
+    val settingsStore: SettingsStore = settingsStoreOverride ?: SettingsStore(applicationContext)
 
     val parserRegistry: ParserRegistry = ParserFactory.createRegistry()
 

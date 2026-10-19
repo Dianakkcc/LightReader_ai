@@ -1,6 +1,6 @@
 # 隐私说明
 
-适用版本：LightReader 2.8.1。
+适用版本：LightReader 2.9.0。
 
 应用不申请 Android `INTERNET` 权限，没有账号系统、广告 SDK、统计 SDK 或自建上传服务器。应用自身不会主动上传书籍内容、阅读进度或使用遥测。
 

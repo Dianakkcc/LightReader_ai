@@ -178,20 +178,20 @@ class EpubDocument private constructor(
         return spine.indexOfFirst { it.path == entryPath }.takeIf { it >= 0 }
     }
 
-    override suspend fun resolveResource(path: String): ReaderResource? = withContext(Dispatchers.IO) {
+    override fun resolveResource(path: String): ReaderResource? {
         val prefix = "${ReaderAssets.EPUB_PREFIX}$bookKey/"
-        if (!path.startsWith(prefix)) return@withContext null
+        if (!path.startsWith(prefix)) return null
         val entryPath = path.removePrefix(prefix)
-        val bytes = readEntry(entryPath) ?: return@withContext null
+        val bytes = readEntry(entryPath) ?: return null
         val mimeType = manifestByPath[entryPath]?.mediaType ?: mimeTypeOf(entryPath)
         if (mimeType == "text/css") {
             val directory = ZipPaths.parentDir(entryPath)
             val rewritten = CssRewriter.rewrite(TextDecoding.decode(bytes)) { reference ->
                 ReaderAssets.epubEntry(bookKey, ZipPaths.resolve(directory, reference))
             }
-            return@withContext ReaderResource(rewritten.toByteArray(Charsets.UTF_8), mimeType)
+            return ReaderResource(rewritten.toByteArray(Charsets.UTF_8), mimeType)
         }
-        ReaderResource(bytes, mimeType)
+        return ReaderResource(bytes, mimeType)
     }
 
     override suspend fun loadCover(): ByteArray? = withContext(Dispatchers.IO) {

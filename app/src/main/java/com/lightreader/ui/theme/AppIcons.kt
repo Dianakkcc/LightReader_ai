@@ -1,5 +1,7 @@
 ﻿package com.lightreader.ui.theme
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material.icons.automirrored.outlined.ArrowForward
@@ -34,7 +36,7 @@ import androidx.compose.ui.unit.dp
 /**
  * Every icon the app draws, behind one indirection.
  *
- * The classic look uses the Material set. The "静奢" (Atelier) design language replaces the whole
+ * The classic look uses the Material set. The AppStrings.get(R.string.ui_atelier_244) (Atelier) design language replaces the whole
  * set with a hand drawn line family - 24x24 grid, 1.4px strokes, round caps and joins - so that
  * theme looks like a different product while nothing else changes.
  */
@@ -272,10 +274,12 @@ val AtelierIcons = AppIconSet(
  * The design language of the app chrome. `CLASSIC` keeps the Material icons; `ATELIER` swaps the
  * whole icon family, the heading font and the corner radii.
  */
-enum class ThemeStyle(val id: String, val label: String) {
-    CLASSIC("classic", "经典"),
-    ATELIER("atelier", "静奢"),
+enum class ThemeStyle(val id: String, private val labelRes: Int) {
+    CLASSIC("classic", R.string.ui_classic_243),
+    ATELIER("atelier", R.string.ui_atelier_244),
     ;
+
+    val label: String get() = AppStrings.get(labelRes)
 
     companion object {
         fun fromId(id: String?): ThemeStyle = entries.firstOrNull { it.id == id } ?: CLASSIC

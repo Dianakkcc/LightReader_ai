@@ -1,5 +1,7 @@
 package com.lightreader.ui.library
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -150,7 +152,7 @@ class LibraryViewModel(private val container: AppContainer) : ViewModel() {
         viewModelScope.launch {
             container.libraryRepository.setShelfKind(book.id, kind)
             _state.update {
-                it.copy(message = "「${book.title}」已移到${kind.displayName}书架")
+                it.copy(message = AppStrings.get(R.string.ui_moved_to_58, book.title, kind.displayName))
             }
         }
     }
@@ -185,9 +187,9 @@ class LibraryViewModel(private val container: AppContainer) : ViewModel() {
             val importedBooks = container.libraryRepository.observeBooks().first()
                 .filter { it.uri !in known }
             val message = when {
-                result.imported > 0 -> "已导入 ${result.imported} 本书"
-                result.duplicates > 0 && result.failures.isEmpty() -> "这些书已在书架中"
-                result.failures.isNotEmpty() -> "导入失败：${result.failures.first().message}"
+                result.imported > 0 -> AppStrings.get(R.string.ui_imported_books_59, result.imported)
+                result.duplicates > 0 && result.failures.isEmpty() -> AppStrings.get(R.string.ui_these_books_are_already_in_your_library_60)
+                result.failures.isNotEmpty() -> AppStrings.get(R.string.ui_import_failed_61, result.failures.first().message)
                 else -> null
             }
             _state.update { it.copy(importing = false, message = message) }
@@ -198,7 +200,7 @@ class LibraryViewModel(private val container: AppContainer) : ViewModel() {
     fun removeFromShelf(book: Book) {
         viewModelScope.launch {
             container.libraryRepository.removeFromShelf(book)
-            _state.update { it.copy(message = "已从书架移除「${book.title}」") }
+            _state.update { it.copy(message = AppStrings.get(R.string.ui_removed_from_the_library_62, book.title)) }
         }
     }
 
@@ -208,9 +210,9 @@ class LibraryViewModel(private val container: AppContainer) : ViewModel() {
             _state.update {
                 it.copy(
                     message = if (deleted) {
-                        "已删除本地文件「${book.title}」"
+                        AppStrings.get(R.string.ui_deleted_local_file_63, book.title)
                     } else {
-                        "该文件来自系统文件提供程序，无法直接删除，请在文件管理器中删除"
+                        AppStrings.get(R.string.ui_this_provider_does_not_support_direct_deletion_d_64)
                     },
                 )
             }
@@ -223,10 +225,10 @@ class LibraryViewModel(private val container: AppContainer) : ViewModel() {
             container.readingRepository.addBookmark(
                 bookId = book.id,
                 location = location,
-                title = "上次阅读位置",
+                title = AppStrings.get(R.string.ui_last_reading_position_65),
                 snippet = "",
             )
-            _state.update { it.copy(message = "已在「${book.title}」添加书签") }
+            _state.update { it.copy(message = AppStrings.get(R.string.ui_added_a_bookmark_in_66, book.title)) }
         }
     }
 }

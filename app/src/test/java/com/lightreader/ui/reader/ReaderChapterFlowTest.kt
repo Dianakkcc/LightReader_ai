@@ -4,7 +4,12 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.test.core.app.ApplicationProvider
+import com.lightreader.TestViewModels
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancelAndJoin
+import kotlinx.coroutines.runBlocking
 import com.lightreader.AppContainer
+import com.lightreader.core.data.TestPreferenceStore
 import com.lightreader.core.data.db.BookEntity
 import com.lightreader.core.model.TocEntry
 import kotlinx.coroutines.Dispatchers
@@ -37,14 +42,17 @@ import java.util.zip.ZipOutputStream
  * whole chain - engine event, bridge, ViewModel, prefetch, next chapter.
  */
 @OptIn(ExperimentalCoroutinesApi::class)
+@org.robolectric.annotation.SQLiteMode(org.robolectric.annotation.SQLiteMode.Mode.NATIVE)
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
 class ReaderChapterFlowTest {
 
     // Unconfined so the ViewModel's own coroutines progress eagerly while the test waits for real
     // file IO (the parsers run on Dispatchers.IO).
+    private val owned = TestViewModels()
     private val dispatcher = UnconfinedTestDispatcher()
     private lateinit var container: AppContainer
+    private lateinit var preferences: TestPreferenceStore
 
     private val context: Context get() = ApplicationProvider.getApplicationContext()
 
@@ -54,18 +62,23 @@ class ReaderChapterFlowTest {
     @Before
     fun setUp() {
         Dispatchers.setMain(dispatcher)
-        container = AppContainer(context, installBuiltinFonts = false)
+        preferences = TestPreferenceStore(context)
+        container = AppContainer(context, installBuiltinFonts = false, settingsStoreOverride = preferences.settings)
     }
 
     @After
     fun tearDown() {
+        owned.close()
+        runBlocking { container.appScope.coroutineContext[Job]?.cancelAndJoin() }
+        container.database.close()
+        preferences.close()
         Dispatchers.resetMain()
     }
 
     @Test
     fun `reaching the end of a chapter opens the next one`() = runTest {
         val bookId = createBook()
-        val viewModel = ReaderViewModel(container, bookId)
+        val viewModel = owned.own(ReaderViewModel(container, bookId))
         watch(viewModel)
 
         val opened = awaitState(viewModel, "打开第一章") { it.chapter != null }
@@ -93,7 +106,7 @@ class ReaderChapterFlowTest {
     @Test
     fun `a continue request made while the index is still running is not lost`() = runTest {
         val bookId = createBook()
-        val viewModel = ReaderViewModel(container, bookId)
+        val viewModel = owned.own(ReaderViewModel(container, bookId))
         watch(viewModel)
         awaitState(viewModel, "打开第一章") { it.chapter != null }
 
@@ -106,7 +119,7 @@ class ReaderChapterFlowTest {
     @Test
     fun `the last chapter does not try to continue`() = runTest {
         val bookId = createBook()
-        val viewModel = ReaderViewModel(container, bookId)
+        val viewModel = owned.own(ReaderViewModel(container, bookId))
         watch(viewModel)
         awaitState(viewModel, "打开第一章") { it.chapter != null }
         // Let the provisional chunk list settle into real chapters first, so every continue request
@@ -134,7 +147,7 @@ class ReaderChapterFlowTest {
     @Test
     fun `a comic archive reads as one continuous flow across its chapter folders`() = runTest {
         val bookId = createComicBook()
-        val viewModel = ReaderViewModel(container, bookId)
+        val viewModel = owned.own(ReaderViewModel(container, bookId))
         watch(viewModel)
 
         val opened = awaitState(viewModel, "打开漫画") { it.isComicFlow && it.pageCount == 6 }

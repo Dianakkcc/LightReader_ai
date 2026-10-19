@@ -29,10 +29,12 @@ data class Book(
  * either (a PDF of scans, a folder of images, a picture-heavy EPUB), so the shelf of anything that
  * is not obvious is decided by the reader: long press the entry and move it.
  */
-enum class ShelfKind(val id: String, val displayName: String) {
-    BOOK("book", "书籍"),
-    COMIC("comic", "漫画"),
+enum class ShelfKind(val id: String, private val labelRes: Int) {
+    BOOK("book", com.lightreader.R.string.shelf_books),
+    COMIC("comic", com.lightreader.R.string.shelf_comics),
     ;
+
+    val displayName: String get() = com.lightreader.core.util.AppStrings.get(labelRes)
 
     companion object {
         fun fromId(id: String?): ShelfKind = entries.firstOrNull { it.id == id } ?: BOOK

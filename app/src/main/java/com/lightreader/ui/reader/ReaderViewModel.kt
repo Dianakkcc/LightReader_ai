@@ -1,5 +1,7 @@
 package com.lightreader.ui.reader
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.lifecycle.ViewModel
@@ -98,6 +100,7 @@ class ReaderViewModel(
     val state: StateFlow<UiState> = _state.asStateFlow()
 
     private var document: OpenedDocument? = null
+    @Volatile
     private var reflowable: ReflowableDocument? = null
     private var pagedDocument: BitmapPagedDocument? = null
     private var imageDocument: ImagePagedDocument? = null
@@ -146,7 +149,7 @@ class ReaderViewModel(
                 _state.update {
                     it.copy(
                         loading = false,
-                        errorMessage = "这本书已不在书架中",
+                        errorMessage = AppStrings.get(R.string.ui_this_book_is_no_longer_in_your_library_130),
                         errorReason = ParseErrorReason.MISSING,
                     )
                 }
@@ -159,13 +162,13 @@ class ReaderViewModel(
 
             val result = runCatching { container.openDocument(book) }
             result.onFailure { throwable ->
-                Logs.w("打开书籍失败：${throwable.message}", throwable)
+                Logs.w(AppStrings.get(R.string.ui_could_not_open_book_131, throwable.message), throwable)
                 _state.update {
                     it.copy(
                         loading = false,
                         errorReason = (throwable as? ParseException)?.reason
                             ?: ParseErrorReason.UNKNOWN,
-                        errorMessage = throwable.message ?: "无法打开此文件",
+                        errorMessage = throwable.message ?: AppStrings.get(R.string.error_open_title),
                     )
                 }
             }
@@ -194,7 +197,7 @@ class ReaderViewModel(
                     }
 
                     else -> _state.update {
-                        it.copy(loading = false, errorMessage = "暂不支持打开此格式")
+                        it.copy(loading = false, errorMessage = AppStrings.get(R.string.ui_this_format_is_not_supported_132))
                     }
                 }
             }
@@ -346,9 +349,9 @@ class ReaderViewModel(
             }
         }
         result.onFailure { throwable ->
-            Logs.w("章节加载失败：${throwable.message}", throwable)
+            Logs.w(AppStrings.get(R.string.ui_could_not_load_chapter_133, throwable.message), throwable)
             _state.update {
-                it.copy(loading = false, errorMessage = throwable.message ?: "章节加载失败")
+                it.copy(loading = false, errorMessage = throwable.message ?: AppStrings.get(R.string.ui_could_not_load_chapter_134))
             }
         }
     }
@@ -424,7 +427,7 @@ class ReaderViewModel(
         _state.update { it.copy(pendingAnchor = null) }
     }
 
-    suspend fun resolveResource(path: String): ReaderResource? =
+    fun resolveResource(path: String): ReaderResource? =
         reflowable?.resolveResource(path)
 
     /** Called by the reading surface once a chapter has finished laying out. */
@@ -629,9 +632,9 @@ class ReaderViewModel(
         val current = _state.value
         val location = currentLocation()
         val title = if (current.isPagedDocument) {
-            "第 ${current.pageIndex + 1} 页"
+            AppStrings.get(R.string.ui_page_145, current.pageIndex + 1)
         } else {
-            current.currentChapterTitle.ifBlank { "第 ${current.chapterIndex + 1} 节" }
+            current.currentChapterTitle.ifBlank { AppStrings.get(R.string.ui_section_77, current.chapterIndex + 1) }
         }
         viewModelScope.launch {
             container.readingRepository.addBookmark(

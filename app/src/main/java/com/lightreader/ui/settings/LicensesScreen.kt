@@ -1,5 +1,7 @@
 package com.lightreader.ui.settings
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
@@ -60,10 +62,10 @@ internal fun LicensesScreen(onBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(selected?.second ?: "许可与声明") },
+                title = { Text(selected?.second ?: AppStrings.get(R.string.ui_licenses_and_notices_162)) },
                 navigationIcon = {
                     IconButton(onClick = goBack) {
-                        Icon(Icons.AutoMirrored.Outlined.ArrowBack, contentDescription = "返回")
+                        Icon(Icons.AutoMirrored.Outlined.ArrowBack, contentDescription = AppStrings.get(R.string.action_back))
                     }
                 },
             )
@@ -73,7 +75,7 @@ internal fun LicensesScreen(onBack: () -> Unit) {
             if (fileName == null) {
                 item {
                     Text(
-                        "软件免费分发。第三方库、字体和角色图片分别遵守原许可或权利声明。",
+                        AppStrings.get(R.string.ui_free_software_distribution_libraries_fonts_and_c_164),
                         modifier = Modifier.padding(16.dp),
                         style = MaterialTheme.typography.bodyMedium,
                     )
@@ -87,7 +89,7 @@ internal fun LicensesScreen(onBack: () -> Unit) {
             } else {
                 val content = paragraphs
                 if (content == null) {
-                    item { Text("加载中…", modifier = Modifier.padding(16.dp)) }
+                    item { Text(AppStrings.get(R.string.ui_loading_165), modifier = Modifier.padding(16.dp)) }
                 } else {
                     itemsIndexed(content) { _, paragraph ->
                         Text(

@@ -2,7 +2,7 @@
 
 一个面向 Android 手机和平板的本地多格式阅读器。文字书籍、PDF、图片与漫画包使用同一套书架和阅读数据管理；无需账号，应用不申请网络权限。
 
-**版本：2.8.1 · Android 8.0+ · Kotlin / Jetpack Compose · 源码公开，软件免费分发**
+**版本：2.9.0 · Android 8.0+ · Kotlin / Jetpack Compose · 源码公开，软件免费分发**
 
 > 允许使用、修改和免费分享，包括企业免费使用；禁止对原版或修改版收费下载、激活、订阅使用或付费解锁。修改版不强制公开源码。完整条款见 [LICENSE](LICENSE)。这是自定义免费分发许可，非 OSI 标准开源许可。第三方组件、字体和角色素材分别遵守其原有许可或权利声明。
 
@@ -42,7 +42,9 @@
 
 ## 安装与使用
 
-仓库维护者发布的已签名 APK 可从 GitHub Releases 获取；新建仓库尚未创建 Release 时，先按下方方法自行构建。CI 提供的 `unsigned` release 产物需要先签名，不能直接安装。
+已发布安装包从 [GitHub Releases](https://github.com/Dianakkcc/LightReader_ai/releases) 获取。2.9.0 起使用专用发布证书；此前 Android Debug 签名用户请先读 [迁移说明](docs/MIGRATION.md)，完成数据导出后再更换安装。校验值及证书指纹随每个版本提供。
+
+仓库内附有 `.github/workflows/android.yml`，上传后应检查 Actions 是否真正执行成功。工作流配置和本地构建成功不能代替远程 CI 结果；CI 的 unsigned APK 需要签名后才能安装。
 
 1. 导入：书架导入按钮选择文件，也可从文件管理器的“打开方式”或“分享”进入。
 2. 调密度：切换到书籍或漫画书架，点“每行数量”，选择自动或 2～6；仅网格模式生效。
@@ -54,9 +56,9 @@
 
 ## 自行构建
 
-建议使用支持 AGP 8.7.3 的 Android Studio（Ladybug 2024.2.1 或更高兼容版本），安装 Android SDK Platform 35 与 Build Tools 35.0.0，Gradle JDK 选 **JDK 17**。项目自带 Gradle 8.11.1 Wrapper，不需要本机另装 Gradle。
+建议使用支持 AGP 8.10.1 的 Android Studio（Meerkat Feature Drop 2024.3.2 或更高兼容版本），安装 Android SDK Platform 36 与 Build Tools 35.0.0，Gradle JDK 选 **JDK 17**。项目自带 Gradle 8.11.1 Wrapper，不需要本机另装 Gradle。
 
-Android Studio 打开仓库根目录并完成同步；命令行需要正确配置 `JAVA_HOME` 和 Android SDK（`ANDROID_HOME` 或本地 `local.properties`）。首次构建需要下载依赖，构建完成后的 App 可离线阅读。
+Android Studio 打开仓库根目录并完成同步；命令行需要正确配置 `JAVA_HOME` 和 Android SDK（`ANDROID_HOME` 或本地 `local.properties`）。首次构建需要下载依赖，构建完成后的 App 可离线阅读。本版 compileSdk / targetSdk 已升至36；本轮验收针对本地构建与GitHub侧载，未实际提交Google Play。
 
 ```powershell
 # Windows，在仓库根目录执行
@@ -101,7 +103,7 @@ tools/preview/        真实 Blink 排版验证脚本
 ```
 
 设备测试需要连接测试用手机或可用模拟器，测试工具可能安装/卸载测试应用，请使用独立测试环境。
-2.8.0 的 106 项本地测试通过，9 项设备测试只完成编译，未在本轮设备执行。2.8.1 的具体验证见 [验证记录](docs/VALIDATION.md)。
+历史 2.8.0 的 106 项本地测试通过；本轮 2.9.0 的测试、lint 和设备验证边界见 [验证记录](docs/VALIDATION.md)。
 测试覆盖解析、备份、漫画跳转、列数保存及面板组合行为；这不等于所有手机上的流畅性保证。真实 Blink 验证台也不能替代 Android WebView 和手机帧时间测量。详见 [性能说明](docs/PERF-REPORT.md)。
 
 ## 隐私与安全
@@ -137,3 +139,21 @@ tools/preview/        真实 Blink 排版验证脚本
 | [实现说明](docs/IMPLEMENTATION_NOTES.md) | 当前实现约束和容易回归的细节 |
 | [更新记录](CHANGELOG.md) | 版本变化 |
 | [许可说明](docs/LICENSING.md) | 免费条件、第三方例外、分发要求 |
+
+## 发布与维护
+
+- [旧版数据迁移](docs/MIGRATION.md)
+- [2.9.0 发布说明](RELEASE_NOTES_2.9.0.md)
+- [本轮审查逐项处理](docs/RELEASE_AUDIT.md)
+- [发布核对步骤](docs/RELEASE_CHECKLIST.md)
+
+仓库 topics 建议：`android`、`kotlin`、`epub-reader`、`pdf-reader`、`offline`、`comic-reader`、`jetpack-compose`。About 与 Release 内容属于仓库设置，需要维护者实际保存后才生效。
+
+## 界面预览
+
+以下为本版实际Compose组件在测试环境中的渲染，使用合成书架，非手机截图；[环境说明](docs/screenshots/README.md)。
+
+<img src="docs/screenshots/01-library-books.png" width="240" alt="书籍书架" />
+<img src="docs/screenshots/02-library-comics.png" width="240" alt="漫画书架" />
+<img src="docs/screenshots/04-settings.png" width="240" alt="全局设置" />
+<img src="docs/screenshots/08-reader-settings.png" width="240" alt="阅读设置" />

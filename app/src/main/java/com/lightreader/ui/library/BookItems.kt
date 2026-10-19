@@ -1,5 +1,7 @@
 package com.lightreader.ui.library
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
@@ -65,7 +67,7 @@ internal fun BookGridItem(
         )
         if (showAuthor && !compact) {
             Text(
-                text = book.author?.takeIf { it.isNotBlank() } ?: "未知作者",
+                text = book.author?.takeIf { it.isNotBlank() } ?: AppStrings.get(R.string.info_unknown_author),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 1,
@@ -113,7 +115,7 @@ internal fun BookListItem(
             )
             if (showAuthor) {
                 Text(
-                    text = book.author?.takeIf { it.isNotBlank() } ?: "未知作者",
+                    text = book.author?.takeIf { it.isNotBlank() } ?: AppStrings.get(R.string.info_unknown_author),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 1,

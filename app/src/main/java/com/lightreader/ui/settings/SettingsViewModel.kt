@@ -1,5 +1,7 @@
 package com.lightreader.ui.settings
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -76,9 +78,9 @@ class SettingsViewModel(private val container: AppContainer) : ViewModel() {
             _state.update {
                 it.copy(
                     message = if (font != null) {
-                        "已导入字体「${font.displayName}」"
+                        AppStrings.get(R.string.settings_font_imported, font.displayName)
                     } else {
-                        "字体文件无法解析，已取消导入"
+                        AppStrings.get(R.string.settings_font_invalid)
                     },
                 )
             }
@@ -97,7 +99,7 @@ class SettingsViewModel(private val container: AppContainer) : ViewModel() {
                 container.readingRepository.setDefaultFont(null)
                 _state.update { it.copy(defaultFontId = null) }
             }
-            _state.update { it.copy(message = "已删除字体「${font.displayName}」") }
+            _state.update { it.copy(message = AppStrings.get(R.string.ui_deleted_font_235, font.displayName)) }
         }
     }
 
@@ -116,7 +118,7 @@ class SettingsViewModel(private val container: AppContainer) : ViewModel() {
             _state.update {
                 it.copy(
                     defaultFontId = ready.id,
-                    message = "已将「${ready.displayName}」设为默认字体",
+                    message = AppStrings.get(R.string.ui_set_as_the_default_font_236, ready.displayName),
                 )
             }
         }
@@ -135,14 +137,14 @@ class SettingsViewModel(private val container: AppContainer) : ViewModel() {
     fun clearCache() {
         viewModelScope.launch {
             container.clearCaches()
-            _state.update { it.copy(cacheBytes = 0L, message = "已清理缓存") }
+            _state.update { it.copy(cacheBytes = 0L, message = AppStrings.get(R.string.ui_cache_cleared_237)) }
         }
     }
 
     fun clearHistory() {
         viewModelScope.launch {
             container.readingRepository.clearHistory()
-            _state.update { it.copy(message = "已清理阅读历史") }
+            _state.update { it.copy(message = AppStrings.get(R.string.ui_reading_history_cleared_238)) }
         }
     }
 
@@ -152,8 +154,8 @@ class SettingsViewModel(private val container: AppContainer) : ViewModel() {
             _state.update {
                 it.copy(
                     message = result.fold(
-                        onSuccess = { count -> "已导出 $count 本书的阅读数据" },
-                        onFailure = { error -> "导出失败：${error.message}" },
+                        onSuccess = { count -> AppStrings.get(R.string.ui_exported_reading_data_for_books_239, count) },
+                        onFailure = { error -> AppStrings.get(R.string.ui_export_failed_240, error.message) },
                     ),
                 )
             }
@@ -166,8 +168,8 @@ class SettingsViewModel(private val container: AppContainer) : ViewModel() {
             _state.update {
                 it.copy(
                     message = result.fold(
-                        onSuccess = { stats -> "已恢复 ${stats.matchedBooks} 本书的数据" },
-                        onFailure = { error -> "导入失败：${error.message}" },
+                        onSuccess = { stats -> AppStrings.get(R.string.ui_restored_data_for_books_241, stats.matchedBooks) },
+                        onFailure = { error -> AppStrings.get(R.string.ui_import_failed_61, error.message) },
                     ),
                 )
             }

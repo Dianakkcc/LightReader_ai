@@ -1,5 +1,7 @@
 ﻿package com.lightreader.ui.reader
 
+import com.lightreader.R
+import com.lightreader.core.util.AppStrings
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -97,7 +99,7 @@ internal fun PanelHeader(title: String, onClose: () -> Unit, modifier: Modifier 
             modifier = Modifier.weight(1f),
         )
         IconButton(onClick = onClose) {
-            Icon(LocalAppIcons.current.close, contentDescription = "关闭")
+            Icon(LocalAppIcons.current.close, contentDescription = AppStrings.get(R.string.action_close))
         }
     }
 }
@@ -115,7 +117,7 @@ internal fun TocPanel(
 ) {
     Surface(modifier = modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
         Column {
-            PanelHeader(title = "目录", onClose = onClose)
+            PanelHeader(title = AppStrings.get(R.string.reader_toc), onClose = onClose)
             if (analysing) {
                 Row(
                     modifier = Modifier.padding(horizontal = 20.dp, vertical = 6.dp),
@@ -123,12 +125,12 @@ internal fun TocPanel(
                 ) {
                     CircularProgressIndicator(modifier = Modifier.size(14.dp), strokeWidth = 2.dp)
                     Spacer(Modifier.width(8.dp))
-                    Text("正在分析章节…", style = MaterialTheme.typography.bodySmall)
+                    Text(AppStrings.get(R.string.ui_analyzing_chapters_70), style = MaterialTheme.typography.bodySmall)
                 }
             }
             if (entries.isEmpty()) {
                 Text(
-                    text = "本书没有目录",
+                    text = AppStrings.get(R.string.reader_no_toc),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(20.dp),
@@ -183,14 +185,14 @@ internal fun SearchPanel(
 ) {
     Surface(modifier = modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
         Column {
-            PanelHeader(title = "全书搜索", onClose = onClose)
+            PanelHeader(title = AppStrings.get(R.string.ui_search_book_72), onClose = onClose)
             OutlinedTextField(
                 value = query,
                 onValueChange = onQueryChange,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp),
-                placeholder = { Text("输入关键词") },
+                placeholder = { Text(AppStrings.get(R.string.ui_enter_keywords_73)) },
                 leadingIcon = { Icon(LocalAppIcons.current.search, contentDescription = null) },
                 singleLine = true,
                 shape = RoundedCornerShape(14.dp),
@@ -202,18 +204,18 @@ internal fun SearchPanel(
                 ) {
                     CircularProgressIndicator(modifier = Modifier.size(16.dp), strokeWidth = 2.dp)
                     Spacer(Modifier.width(8.dp))
-                    Text("正在搜索…", style = MaterialTheme.typography.bodySmall)
+                    Text(AppStrings.get(R.string.reader_searching), style = MaterialTheme.typography.bodySmall)
                 }
 
                 query.isNotBlank() && results.isEmpty() -> Text(
-                    text = "没有找到匹配内容",
+                    text = AppStrings.get(R.string.ui_no_matching_text_75),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(20.dp),
                 )
 
                 results.isNotEmpty() -> Text(
-                    text = "共 ${results.size} 条结果",
+                    text = AppStrings.get(R.string.ui_results_76, results.size),
                     style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(horizontal = 20.dp, vertical = 8.dp),
@@ -225,7 +227,7 @@ internal fun SearchPanel(
                     ListItem(
                         headlineContent = {
                             Text(
-                                text = hit.title.ifBlank { "第 ${hit.chapterIndex + 1} 节" },
+                                text = hit.title.ifBlank { AppStrings.get(R.string.ui_section_77, hit.chapterIndex + 1) },
                                 style = MaterialTheme.typography.labelLarge,
                                 color = MaterialTheme.colorScheme.primary,
                             )
@@ -258,10 +260,10 @@ internal fun BookmarksPanel(
 ) {
     Surface(modifier = modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
         Column {
-            PanelHeader(title = "书签", onClose = onClose)
+            PanelHeader(title = AppStrings.get(R.string.reader_bookmarks), onClose = onClose)
             if (bookmarks.isEmpty()) {
                 Text(
-                    text = "还没有书签。阅读时点击底部工具栏的书签按钮即可添加。",
+                    text = AppStrings.get(R.string.ui_no_bookmarks_yet_use_the_bookmark_button_in_the__79),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(20.dp),
@@ -290,7 +292,7 @@ internal fun BookmarksPanel(
                                     }
                                     bookmark.note?.takeIf { it.isNotBlank() }?.let { note ->
                                         Text(
-                                            text = "备注：$note",
+                                            text = AppStrings.get(R.string.ui_note_80, note),
                                             style = MaterialTheme.typography.bodySmall,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         )
@@ -304,7 +306,7 @@ internal fun BookmarksPanel(
                             },
                             trailingContent = {
                                 IconButton(onClick = { onDelete(bookmark) }) {
-                                    Icon(LocalAppIcons.current.delete, contentDescription = "删除书签")
+                                    Icon(LocalAppIcons.current.delete, contentDescription = AppStrings.get(R.string.ui_delete_bookmark_81))
                                 }
                             },
                             modifier = Modifier.clickable { onSelect(bookmark) },
@@ -328,7 +330,7 @@ internal fun ReaderThemePanel(
 ) {
     Surface(modifier = modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
         Column {
-            PanelHeader(title = "背景", onClose = onClose)
+            PanelHeader(title = AppStrings.get(R.string.ui_background_82), onClose = onClose)
             FlowRow(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -458,7 +460,7 @@ internal fun ReaderSettingsPanel(
     Surface(modifier = modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
         LazyColumn(modifier = Modifier.fillMaxSize().testTag("readerSettingsList")) {
             item(key = "header") {
-                PanelHeader(title = "阅读设置", onClose = onClose)
+                PanelHeader(title = AppStrings.get(R.string.reader_settings), onClose = onClose)
             }
             item(key = "preview") {
                 FontPreview(settings = settings)
@@ -471,7 +473,7 @@ internal fun ReaderSettingsPanel(
             }
             item(key = "lineHeight") {
                 SettingSlider(
-                    label = "行距",
+                    label = AppStrings.get(R.string.settings_line_spacing),
                     value = settings.lineHeightMultiplier,
                     range = 1.2f..2.6f,
                     steps = 13,
@@ -481,17 +483,17 @@ internal fun ReaderSettingsPanel(
             }
             item(key = "paragraphSpacing") {
                 SettingSlider(
-                    label = "段间距",
+                    label = AppStrings.get(R.string.settings_paragraph_spacing),
                     value = settings.paragraphSpacingEm,
                     range = 0f..2f,
                     steps = 19,
-                    valueLabel = String.format("%.1f 字", settings.paragraphSpacingEm),
+                    valueLabel = String.format(AppStrings.get(R.string.ui_1f_em_86), settings.paragraphSpacingEm),
                     onChange = { value -> onUpdate { it.copy(paragraphSpacingEm = value) } },
                 )
             }
             item(key = "letterSpacing") {
                 SettingSlider(
-                    label = "字间距",
+                    label = AppStrings.get(R.string.settings_letter_spacing),
                     value = settings.letterSpacingEm,
                     range = 0f..0.2f,
                     steps = 9,
@@ -501,7 +503,7 @@ internal fun ReaderSettingsPanel(
             }
             item(key = "margin") {
                 SettingSlider(
-                    label = "页边距",
+                    label = AppStrings.get(R.string.settings_margin),
                     value = settings.marginDp.toFloat(),
                     range = 8f..48f,
                     steps = 19,
@@ -511,11 +513,11 @@ internal fun ReaderSettingsPanel(
             }
             item(key = "indent") {
                 ChipRow(
-                    label = "首行缩进",
+                    label = AppStrings.get(R.string.ui_first_line_indent_89),
                     options = listOf(
-                        IndentMode.AUTO to "自动",
-                        IndentMode.ON to "缩进两字",
-                        IndentMode.OFF to "不缩进",
+                        IndentMode.AUTO to AppStrings.get(R.string.ui_auto_90),
+                        IndentMode.ON to AppStrings.get(R.string.ui_two_characters_91),
+                        IndentMode.OFF to AppStrings.get(R.string.ui_no_indent_92),
                     ),
                     selected = settings.indentMode,
                     onSelect = { value -> onUpdate { it.copy(indentMode = value) } },
@@ -523,10 +525,10 @@ internal fun ReaderSettingsPanel(
             }
             item(key = "alignment") {
                 ChipRow(
-                    label = "对齐",
+                    label = AppStrings.get(R.string.settings_alignment),
                     options = listOf(
-                        TextAlignment.JUSTIFY to "两端对齐",
-                        TextAlignment.START to "左对齐",
+                        TextAlignment.JUSTIFY to AppStrings.get(R.string.settings_align_justify),
+                        TextAlignment.START to AppStrings.get(R.string.settings_align_left),
                     ),
                     selected = settings.alignment,
                     onSelect = { value -> onUpdate { it.copy(alignment = value) } },
@@ -534,10 +536,10 @@ internal fun ReaderSettingsPanel(
             }
             item(key = "readingMode") {
                 ChipRow(
-                    label = "翻页方式",
+                    label = AppStrings.get(R.string.settings_reading_mode),
                     options = listOf(
-                        ReadingMode.PAGED to "左右翻页",
-                        ReadingMode.SCROLL to "上下滚动",
+                        ReadingMode.PAGED to AppStrings.get(R.string.ui_paged_97),
+                        ReadingMode.SCROLL to AppStrings.get(R.string.ui_continuous_scroll_98),
                     ),
                     selected = settings.readingMode,
                     onSelect = { value -> onUpdate { it.copy(readingMode = value) } },
@@ -545,11 +547,11 @@ internal fun ReaderSettingsPanel(
             }
             item(key = "pageFit") {
                 ChipRow(
-                    label = "图片与 PDF 缩放",
+                    label = AppStrings.get(R.string.ui_image_and_pdf_scaling_99),
                     options = listOf(
-                        PageFit.WIDTH to "适应宽度",
-                        PageFit.PAGE to "适应页面",
-                        PageFit.ACTUAL to "原始大小",
+                        PageFit.WIDTH to AppStrings.get(R.string.settings_fit_width),
+                        PageFit.PAGE to AppStrings.get(R.string.settings_fit_page),
+                        PageFit.ACTUAL to AppStrings.get(R.string.settings_actual_size),
                     ),
                     selected = settings.pageFit,
                     onSelect = { value -> onUpdate { it.copy(pageFit = value) } },
@@ -563,9 +565,9 @@ internal fun ReaderSettingsPanel(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Column(modifier = Modifier.weight(1f)) {
-                        Text("双页模式")
+                        Text(AppStrings.get(R.string.settings_dual_page))
                         Text(
-                            text = "平板与横屏时：PDF / 图片并排两页，重排版文字分双栏",
+                            text = AppStrings.get(R.string.ui_on_tablets_or_in_landscape_pdf_images_use_facing_104),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -579,7 +581,7 @@ internal fun ReaderSettingsPanel(
             item(key = "fontsHeader") {
                 HorizontalDivider(modifier = Modifier.padding(vertical = 10.dp))
                 Text(
-                    text = "字体",
+                    text = AppStrings.get(R.string.settings_font),
                     style = MaterialTheme.typography.titleSmall,
                     modifier = Modifier.padding(horizontal = 20.dp),
                 )
@@ -595,7 +597,7 @@ internal fun ReaderSettingsPanel(
                             .padding(vertical = 6.dp),
                     ) {
                         com.lightreader.ui.components.AppChip(
-                            label = "系统字体",
+                            label = AppStrings.get(R.string.ui_system_font_106),
                             selected = settings.fontId == null && !settings.useSerif,
                             onClick = {
                                 onUpdate {
@@ -610,7 +612,7 @@ internal fun ReaderSettingsPanel(
                             },
                         )
                         com.lightreader.ui.components.AppChip(
-                            label = "宋体（衬线）",
+                            label = AppStrings.get(R.string.ui_serif_107),
                             selected = settings.fontId == null && settings.useSerif,
                             onClick = {
                                 onUpdate {
@@ -638,7 +640,7 @@ internal fun ReaderSettingsPanel(
                     ) {
                         Icon(LocalAppIcons.current.upload, contentDescription = null)
                         Spacer(Modifier.width(8.dp))
-                        Text("导入字体（.ttf / .otf / .ttc）")
+                        Text(AppStrings.get(R.string.ui_import_font_ttf_otf_ttc_108))
                     }
                 }
             }
@@ -670,7 +672,7 @@ private fun FontPreview(settings: ReaderSettings) {
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
             Text(
-                text = "春日迟迟，卉木萋萋。仓庚喈喈，采蘩祁祁。",
+                text = AppStrings.get(R.string.ui_the_spring_day_lingers_trees_and_flowers_flouris_109),
                 style = TextStyle(
                     fontFamily = family ?: FontFamily.Default,
                     fontSize = settings.fontSizeSp.sp,
@@ -680,7 +682,7 @@ private fun FontPreview(settings: ReaderSettings) {
                 ),
             )
             Text(
-                text = "Aa Bb 0123 · 当前字号 ${settings.fontSizeSp.toInt()}",
+                text = AppStrings.get(R.string.ui_aa_bb_0123_font_size_110, settings.fontSizeSp.toInt()),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 6.dp),
@@ -694,12 +696,12 @@ private fun FontSizeRow(value: Float, onChange: (Float) -> Unit) {
     var draft by remember(value) { mutableFloatStateOf(value) }
     Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("字号", modifier = Modifier.weight(1f))
+            Text(AppStrings.get(R.string.settings_font_size), modifier = Modifier.weight(1f))
             Text("${draft.toInt()}", style = MaterialTheme.typography.labelMedium)
         }
         Row(verticalAlignment = Alignment.CenterVertically) {
             IconButton(onClick = { onChange((value - 1f).coerceAtLeast(12f)) }) {
-                Icon(LocalAppIcons.current.remove, contentDescription = "减小字号")
+                Icon(LocalAppIcons.current.remove, contentDescription = AppStrings.get(R.string.ui_decrease_font_size_112))
             }
             Slider(
                 value = draft.coerceIn(12f, 34f),
@@ -710,7 +712,7 @@ private fun FontSizeRow(value: Float, onChange: (Float) -> Unit) {
                 modifier = Modifier.weight(1f),
             )
             IconButton(onClick = { onChange((value + 1f).coerceAtMost(34f)) }) {
-                Icon(LocalAppIcons.current.add, contentDescription = "增大字号")
+                Icon(LocalAppIcons.current.add, contentDescription = AppStrings.get(R.string.ui_increase_font_size_113))
             }
         }
     }
@@ -731,9 +733,9 @@ private fun SettingSlider(
             Text(label, modifier = Modifier.weight(1f))
             Text(
                 if (draft == value) valueLabel else when (label) {
-                    "行距" -> "%.1f".format(draft)
-                    "段间距" -> "%.1f 字".format(draft)
-                    "字间距" -> "%.2f".format(draft)
+                    AppStrings.get(R.string.settings_line_spacing) -> "%.1f".format(draft)
+                    AppStrings.get(R.string.settings_paragraph_spacing) -> AppStrings.get(R.string.ui_1f_em_86).format(draft)
+                    AppStrings.get(R.string.settings_letter_spacing) -> "%.2f".format(draft)
                     else -> draft.toInt().toString()
                 },
                 style = MaterialTheme.typography.labelMedium,

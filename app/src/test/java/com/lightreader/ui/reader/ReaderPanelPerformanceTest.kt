@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 
 @org.junit.runner.RunWith(org.robolectric.RobolectricTestRunner::class)
-@org.robolectric.annotation.Config(sdk = [34])
+@org.robolectric.annotation.Config(sdk = [34], qualifiers = "zh")
 @org.robolectric.annotation.GraphicsMode(org.robolectric.annotation.GraphicsMode.Mode.NATIVE)
 class ReaderPanelPerformanceTest {
     @get:Rule val rule = createComposeRule()
@@ -66,6 +66,20 @@ class ReaderPanelPerformanceTest {
         rule.onNodeWithTag("readerSettingsList")
             .performScrollToNode(hasText("导入字体（.ttf / .otf / .ttc）"))
         rule.onNodeWithText("导入字体（.ttf / .otf / .ttc）").assertIsDisplayed()
+    }
+
+    @Test
+    @org.robolectric.annotation.Config(qualifiers = "en")
+    fun readerSettingsUsesEnglishLabels() {
+        rule.setContent {
+            MaterialTheme {
+                ReaderSettingsPanel(ReaderSettings(), emptyList(), {}, {}, {}, {})
+            }
+        }
+        rule.onNodeWithText("Reading settings").assertIsDisplayed()
+        rule.onNodeWithTag("readerSettingsList")
+            .performScrollToNode(hasText("Import font (.ttf / .otf / .ttc)"))
+        rule.onNodeWithText("Import font (.ttf / .otf / .ttc)").assertIsDisplayed()
     }
 
     @Test

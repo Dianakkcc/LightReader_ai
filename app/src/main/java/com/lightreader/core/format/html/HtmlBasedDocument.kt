@@ -20,7 +20,7 @@ class HtmlBasedDocument(
     override val format: BookFormat,
     override val metadata: DocumentMetadata,
     private val sections: List<Section>,
-    private val resourceResolver: (suspend (String) -> ReaderResource?)? = null,
+    private val resourceResolver: ((String) -> ReaderResource?)? = null,
     private val closer: (() -> Unit)? = null,
 ) : ReflowableDocument {
 
@@ -57,7 +57,7 @@ class HtmlBasedDocument(
         )
     }
 
-    override suspend fun resolveResource(path: String): ReaderResource? =
+    override fun resolveResource(path: String): ReaderResource? =
         resourceResolver?.invoke(path)
 
     override suspend fun search(query: String, limit: Int): List<SearchHit> = ChapterSearch.find(

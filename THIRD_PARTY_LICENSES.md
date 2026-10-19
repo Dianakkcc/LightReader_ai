@@ -6,17 +6,17 @@
 
 | 组件 | 当前版本 | 许可 | 用途/来源 |
 | --- | --- | --- | --- |
-| AndroidX / Jetpack Compose | BOM 2024.12.01；Compose 1.7.6 / Material3 1.3.1 | Apache-2.0 | [AndroidX](https://android.googlesource.com/platform/frameworks/support/)，UI、导航、生命周期与基础组件 |
-| Room / DataStore / WebKit / DocumentFile | 2.6.1 / 1.1.1 / 1.12.1 / 1.0.1 | Apache-2.0 | 数据库、偏好、WebView 兼容与 SAF |
-| Kotlin / kotlinx | stdlib 2.0.21；coroutines 1.9.0；serialization 1.7.3 | Apache-2.0 | [Kotlin](https://github.com/JetBrains/kotlin)、并发与 JSON；传递旧兼容模块见完整清单 |
-| jsoup | 1.18.3 | MIT | [jsoup](https://github.com/jhy/jsoup/tree/jsoup-1.18.3)，HTML/XML 解析；版权 Jonathan Hedley |
+| AndroidX / Jetpack Compose | BOM 2025.05.01；各组件实际版本见解析清单 | Apache-2.0 | [AndroidX](https://android.googlesource.com/platform/frameworks/support/)，UI、导航、生命周期与基础组件 |
+| Room / DataStore / WebKit / DocumentFile | 2.8.5 / 1.1.7 / 1.12.1 / 1.0.1 | Apache-2.0 | 数据库、偏好、WebView 兼容与 SAF |
+| Kotlin / kotlinx | stdlib 2.1.20；coroutines 1.9.0；serialization 1.7.3 | Apache-2.0 | [Kotlin](https://github.com/JetBrains/kotlin)、并发与 JSON；传递旧兼容模块见完整清单 |
+| jsoup | 1.23.2 | MIT | [jsoup](https://github.com/jhy/jsoup/tree/jsoup-1.23.2)，HTML/XML 解析；版权 Jonathan Hedley |
 | commonmark-java / GFM tables | 0.24.0 | BSD-2-Clause | [commonmark-java](https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.24.0)，Markdown；版权 Atlassian |
 | PDFBox-Android | 2.0.27.0 | Apache-2.0，含独立资源条款 | [v2.0.27.0](https://github.com/TomRoush/PdfBox-Android/tree/v2.0.27.0)，文字层与目录；页面绘制用 Android PdfRenderer |
 | Bouncy Castle | bcpkix / bcutil / bcprov jdk15to18 1.72 | MIT 风格的 Bouncy Castle 许可 | [r1rv72](https://github.com/bcgit/bc-java/tree/r1rv72)，PDFBox 的传递依赖 |
 | Okio | okio-jvm 3.4.0 | Apache-2.0 | [Okio](https://github.com/square/okio/tree/parent-3.4.0)，DataStore 传递依赖 |
 | Noto Serif SC | 2.003 | SIL OFL-1.1 | 内置阅读字体；© 2017-2024 Adobe，Noto 商标归 Google |
 
-运行时另有 AndroidX、JetBrains annotations、Guava listenablefuture 等模块，完整 **87 项 release 坐标**见 [docs/DEPENDENCIES.md](docs/DEPENDENCIES.md)。BOM 是版本对齐元数据，不能把 BOM 版本当作全部组件的实际版本。
+运行时另有 AndroidX、JetBrains annotations、Guava listenablefuture 等模块，完整 **90 项 release 坐标**见 [docs/DEPENDENCIES.md](docs/DEPENDENCIES.md)。BOM 是版本对齐元数据，不能把 BOM 版本当作全部组件的实际版本。
 
 ## PDFBox 内部内容
 
@@ -32,8 +32,8 @@
 | Rhino | 1.7.15 | MPL-2.0，附 V8/Sun 等 NOTICE | 测试中执行 JS；不进入正式 APK |
 | AndroidX Test / Compose UI Test / coroutines-test | 解析版本见清单 | Apache-2.0 | JVM/设备界面与协程测试 |
 | Gradle / Wrapper | 8.11.1 | Apache-2.0 | 构建；[官方源码](https://github.com/gradle/gradle/tree/v8.11.1) |
-| AGP / KSP / Room compiler | 8.7.3 / 2.0.21-1.0.28 / 2.6.1 | Apache-2.0 | 构建插件/代码生成；不随源码包分发工具二进制 |
-| Kotlin 编译插件 | 2.0.21 | Apache-2.0 | 构建；与语言版本一致 |
+| AGP / KSP / Room compiler | 8.10.1 / 2.1.20-1.0.32 / 2.8.5 | Apache-2.0 | 构建插件/代码生成；不随源码包分发工具二进制 |
+| Kotlin 编译插件 | 2.1.20 | Apache-2.0 | 构建；与语言版本一致 |
 
 测试的 Hamcrest、ASM、ICU、Conscrypt、javax.annotation 等传递依赖见完整清单，各自原文能从归档取得的已保存。测试清单不会把这些模块误算进 release APK。
 开发机使用的 JDK、Android SDK、Chrome 和 CI Actions 是外部工具，不作为 App 自研内容；仓库只含 Wrapper JAR，不含它们的安装包。

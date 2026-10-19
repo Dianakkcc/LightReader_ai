@@ -33,9 +33,10 @@ import kotlinx.coroutines.flow.map
 private val Context.settingsDataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 /** Persisted user preferences (reading defaults, shelf layout). Small and reactive. */
-class SettingsStore(context: Context) {
-
-    private val store = context.applicationContext.settingsDataStore
+class SettingsStore(
+    context: Context,
+    private val store: DataStore<Preferences> = context.applicationContext.settingsDataStore,
+) {
 
     val settings: Flow<AppSettings> = store.data.map { preferences -> preferences.toSettings() }
 

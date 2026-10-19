@@ -1,6 +1,8 @@
 package com.lightreader.core.format.txt
 
 import android.content.Context
+import android.os.ParcelFileDescriptor
+import com.lightreader.core.util.closeIfOpeningFails
 import com.lightreader.core.format.BlockHtml
 import com.lightreader.core.format.ChapterSearch
 import com.lightreader.core.format.DocumentSource
@@ -83,7 +85,7 @@ class TxtDocument private constructor(
         )
     }
 
-    override suspend fun resolveResource(path: String): ReaderResource? = null
+    override fun resolveResource(path: String): ReaderResource? = null
 
     override suspend fun search(query: String, limit: Int): List<SearchHit> = ChapterSearch.find(
         query = query,
@@ -241,12 +243,14 @@ class TxtDocument private constructor(
     private fun openAt(start: Long): FileInputStream {
         val descriptor = context.contentResolver.openFileDescriptor(source.androidUri, "r")
             ?: throw ParseException(ParseErrorReason.PERMISSION, "无法读取文件：${source.uri}")
-        val stream = FileInputStream(descriptor.fileDescriptor)
-        if (start > 0) {
-            runCatching { stream.channel.position(start) }
-                .onFailure { skipFully(stream, start) }
+        val stream = descriptor.closeIfOpeningFails { ParcelFileDescriptor.AutoCloseInputStream(it) }
+        return stream.closeIfOpeningFails {
+            if (start > 0) {
+                runCatching { it.channel.position(start) }
+                    .onFailure { _ -> skipFully(it, start) }
+            }
+            it
         }
-        return stream
     }
 
     private fun skipFully(stream: FileInputStream, count: Long) {

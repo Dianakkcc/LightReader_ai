@@ -12,6 +12,7 @@ import com.lightreader.core.model.BookFormat
 import com.lightreader.core.model.DocumentMetadata
 import com.lightreader.core.model.OpenedDocument
 import com.lightreader.core.util.Logs
+import com.lightreader.core.util.closeIfOpeningFails
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -50,7 +51,7 @@ class PdfParser : DocumentParser {
      * Most document providers hand out a seekable file descriptor, which PdfRenderer needs.
      * When they do not, the file is copied into the cache once and opened from there.
      */
-    private fun openRenderer(
+    private suspend fun openRenderer(
         context: Context,
         source: DocumentSource,
         workspace: BookWorkspace,
@@ -59,17 +60,15 @@ class PdfParser : DocumentParser {
         runCatching {
             val descriptor = context.contentResolver.openFileDescriptor(source.androidUri, "r")
             if (descriptor != null) {
-                val renderer = PdfRenderer(descriptor)
+                val renderer = descriptor.closeIfOpeningFails { PdfRenderer(it) }
                 return renderer to descriptor
             }
         }.onFailure { Logs.w("直接打开 PDF 失败：${it.message}", it) }
 
         return runCatching {
-            val file: File = kotlinx.coroutines.runBlocking {
-                workspace.materialise(source, key, "pdf")
-            }
+            val file: File = workspace.materialise(source, key, "pdf")
             val descriptor = ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY)
-            val renderer = PdfRenderer(descriptor)
+            val renderer = descriptor.closeIfOpeningFails { PdfRenderer(it) }
             renderer to descriptor
         }.onFailure { Logs.w("缓存后打开 PDF 失败：${it.message}", it) }
             .getOrNull()

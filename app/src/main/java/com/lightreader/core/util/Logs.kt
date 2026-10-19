@@ -1,6 +1,7 @@
 package com.lightreader.core.util
 
 import android.util.Log
+import com.lightreader.BuildConfig
 
 /**
  * Single logging facade. Only diagnostics go here; user facing errors are modelled as
@@ -8,17 +9,17 @@ import android.util.Log
  */
 object Logs {
     private const val TAG = "LightReader"
-    private const val ENABLED = true
+    private val ENABLED = BuildConfig.DEBUG
 
     fun d(message: String) {
         if (ENABLED) Log.d(TAG, message)
     }
 
     fun w(message: String, throwable: Throwable? = null) {
-        Log.w(TAG, message, throwable)
+        if (ENABLED) Log.w(TAG, message, throwable)
     }
 
     fun e(message: String, throwable: Throwable? = null) {
-        Log.e(TAG, message, throwable)
+        if (ENABLED) Log.e(TAG, message, throwable)
     }
 }

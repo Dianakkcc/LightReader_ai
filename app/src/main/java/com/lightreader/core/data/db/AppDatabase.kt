@@ -49,7 +49,7 @@ abstract class AppDatabase : RoomDatabase() {
             "lightreader.db",
         )
             .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
-            .fallbackToDestructiveMigration()
+            // A missing migration must fail visibly instead of silently erasing the library.
             .build()
     }
 }

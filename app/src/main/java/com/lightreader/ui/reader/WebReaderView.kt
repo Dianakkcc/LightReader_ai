@@ -38,9 +38,7 @@ import com.lightreader.core.model.ReaderResource
 import com.lightreader.core.model.ReaderSettings
 import com.lightreader.core.util.Logs
 import com.lightreader.ui.theme.ReaderPalette
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
-import kotlinx.coroutines.withTimeoutOrNull
 import java.io.ByteArrayInputStream
 
 /** Handle used by the host screen to talk to the reading surface. */
@@ -96,6 +94,7 @@ class WebReaderController {
      * apart "the script never ran" from "the script ran and could not talk to the host".
      */
     fun probe(tag: String) {
+        if (!com.lightreader.BuildConfig.DEBUG) return
         val view = webView ?: return
         // Where the surface actually sits on the screen: a reading area that runs under the
         // navigation bar hides everything the page pins to its bottom edge.
@@ -176,7 +175,7 @@ fun ReflowableReaderView(
     palette: ReaderPalette,
     fontScale: Float,
     initialOffsetProvider: () -> Int,
-    resourceResolver: suspend (String) -> ReaderResource?,
+    resourceResolver: (String) -> ReaderResource?,
     onLocation: (chapterIndex: Int, charOffset: Int, fraction: Float, pages: Int, page: Int) -> Unit,
     onTap: (x: Float, y: Float, width: Int, height: Int) -> Unit,
     onInternalLink: (String) -> Unit,
@@ -220,7 +219,7 @@ fun ReflowableReaderView(
     val currentReachStart = rememberUpdatedState(onReachStart)
     val currentEdgeSwipe = rememberUpdatedState(onEdgeSwipe)
 
-    val bridge = remember {
+    val bridge: ReaderBridge = remember {
         ReaderBridge(
             locationCallback = { chapterIndex, offset, fraction, pages, page ->
                 currentLocation.value(chapterIndex, offset, fraction, pages, page)
@@ -254,7 +253,7 @@ fun ReflowableReaderView(
                 isVerticalScrollBarEnabled = false
                 isHorizontalScrollBarEnabled = false
                 overScrollMode = WebView.OVER_SCROLL_NEVER
-                addJavascriptInterface(bridge, "LrBridge")
+                installReaderBridge(bridge)
                 this.settings.apply {
                     setJavaScriptEnabled(true)
                     setDomStorageEnabled(false)
@@ -301,13 +300,12 @@ fun ReflowableReaderView(
                                 ByteArrayInputStream(bytes),
                             )
                         }
-                        val resource = runBlocking {
-                            withTimeoutOrNull(8_000) { currentResolver.value(path) }
-                        } ?: run {
+                        // This callback already runs on WebView's resource worker. Resolve local
+                        // bytes directly rather than blocking a coroutine dispatch for each image.
+                        val resource = runCatching { currentResolver.value(path) }.getOrNull() ?: run {
                             Logs.w("资源缺失：$path")
                             return null
                         }
-                        Logs.d("资源送达：$path (${resource.bytes.size}B ${resource.mimeType})")
                         return resource.toResponse()
                     }
 
@@ -418,7 +416,7 @@ fun ReflowableReaderView(
     // that is already on screen, so a slider drag no longer re-parses the chapter and re-decodes its
     // pictures - that was what made the settings sheet stutter on phones.
     val pageKey = remember(chapter.index, settings.readingMode, settings.dualPage) {
-        arrayOf(chapter.index, settings.readingMode, settings.dualPage).contentHashCode()
+        arrayOf<Any>(chapter.index, settings.readingMode, settings.dualPage).contentHashCode()
     }
     val styleKey = remember(
         settings.fontSizeSp,
@@ -592,4 +590,9 @@ class ReaderBridge(
         Logs.d("引擎握手：$tag")
         return "pong"
     }
+}
+
+/** Explicit bridge type also lets lint inspect every exposed method annotation. */
+private fun WebView.installReaderBridge(bridge: ReaderBridge) {
+    addJavascriptInterface(bridge, "LrBridge")
 }
