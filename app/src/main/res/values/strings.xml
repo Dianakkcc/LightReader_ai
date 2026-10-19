@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">轻读</string>
+
+    <!-- 通用 -->
+    <string name="action_ok">确定</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_delete">删除</string>
+    <string name="action_close">关闭</string>
+    <string name="action_back">返回</string>
+    <string name="action_retry">重试</string>
+    <string name="action_more">更多</string>
+
+    <!-- 书架 -->
+    <string name="library_title">书架</string>
+    <string name="library_import">导入书籍</string>
+    <string name="library_search_hint">搜索书名或作者</string>
+    <string name="library_empty_title">书架还是空的</string>
+    <string name="library_empty_message">点击右下角按钮，从本地导入 EPUB、PDF、TXT 等文件</string>
+    <string name="library_no_match">没有找到匹配的书籍</string>
+    <string name="library_grid">网格</string>
+    <string name="library_list">列表</string>
+    <string name="library_sort">排序</string>
+    <string name="library_filter">筛选</string>
+    <string name="sort_recent">最近阅读</string>
+    <string name="sort_added">最近添加</string>
+    <string name="sort_title">按书名</string>
+    <string name="sort_author">按作者</string>
+    <string name="sort_progress">按进度</string>
+    <string name="filter_all">全部格式</string>
+    <string name="section_recent">最近阅读</string>
+    <string name="section_all">全部书籍</string>
+    <string name="menu_open">打开</string>
+    <string name="menu_continue">继续阅读</string>
+    <string name="menu_info">书籍信息</string>
+    <string name="menu_add_bookmark">添加书签</string>
+    <string name="menu_remove_shelf">从书架移除</string>
+    <string name="menu_delete_file">删除本地文件</string>
+    <string name="remove_shelf_confirm_title">从书架移除？</string>
+    <string name="remove_shelf_confirm_message">只移除书架记录和阅读进度，不会删除设备上的原文件。</string>
+    <string name="delete_file_confirm_title">删除本地文件？</string>
+    <string name="delete_file_confirm_message">将永久删除设备上的原文件 %1$s，此操作无法撤销。</string>
+    <string name="delete_file_unsupported">该文件来自系统文件提供程序，无法直接删除，请到文件管理器中删除。</string>
+    <string name="import_failed">导入失败</string>
+    <string name="import_unsupported">不支持的文件格式：%1$s</string>
+    <string name="import_success">已导入 %1$d 本书</string>
+    <string name="import_duplicate">该书已在书架中</string>
+
+    <!-- 书籍信息 -->
+    <string name="info_title">书籍信息</string>
+    <string name="info_format">格式</string>
+    <string name="info_size">大小</string>
+    <string name="info_added">加入时间</string>
+    <string name="info_last_read">最后阅读</string>
+    <string name="info_progress">阅读进度</string>
+    <string name="info_path">位置</string>
+    <string name="info_unknown_author">未知作者</string>
+    <string name="info_never">尚未阅读</string>
+
+    <!-- 阅读器 -->
+    <string name="reader_toc">目录</string>
+    <string name="reader_search">搜索</string>
+    <string name="reader_bookmarks">书签</string>
+    <string name="reader_settings">阅读设置</string>
+    <string name="reader_no_toc">本书没有目录</string>
+    <string name="reader_no_bookmarks">还没有书签</string>
+    <string name="reader_bookmark_added">已添加书签</string>
+    <string name="reader_bookmark_removed">已删除书签</string>
+    <string name="reader_search_hint">在本书中搜索</string>
+    <string name="reader_search_empty">没有搜索结果</string>
+    <string name="reader_search_count">第 %1$d / %2$d 条结果</string>
+    <string name="reader_page_of">第 %1$d / %2$d 页</string>
+    <string name="reader_loading">正在打开…</string>
+    <string name="reader_reflow_mode">滚动</string>
+    <string name="reader_paged_mode">翻页</string>
+    <string name="reader_next_page">下一页</string>
+    <string name="reader_prev_page">上一页</string>
+    <string name="reader_searching">正在搜索…</string>
+    <string name="reader_bookmark_note_hint">备注（可选）</string>
+
+    <!-- 阅读设置 -->
+    <string name="settings_reading">阅读</string>
+    <string name="settings_font">字体</string>
+    <string name="settings_font_size">字号</string>
+    <string name="settings_line_spacing">行距</string>
+    <string name="settings_letter_spacing">字间距</string>
+    <string name="settings_paragraph_spacing">段间距</string>
+    <string name="settings_margin">页边距</string>
+    <string name="settings_alignment">对齐</string>
+    <string name="settings_align_left">左对齐</string>
+    <string name="settings_align_justify">两端对齐</string>
+    <string name="settings_theme">主题</string>
+    <string name="settings_theme_system">跟随系统</string>
+    <string name="settings_theme_light">白色</string>
+    <string name="settings_theme_sepia">羊皮纸</string>
+    <string name="settings_theme_dark">深色</string>
+    <string name="settings_theme_black">黑色</string>
+    <string name="settings_reading_mode">翻页方式</string>
+    <string name="settings_page_mode">页面模式</string>
+    <string name="settings_pdf_zoom">默认缩放</string>
+    <string name="settings_fit_width">适应宽度</string>
+    <string name="settings_fit_page">适应页面</string>
+    <string name="settings_actual_size">原始大小</string>
+    <string name="settings_dual_page">双页模式</string>
+    <string name="settings_library">书架</string>
+    <string name="settings_show_author">显示作者</string>
+    <string name="settings_show_progress">显示阅读进度</string>
+    <string name="settings_default_layout">默认布局</string>
+    <string name="settings_reset">恢复默认设置</string>
+    <string name="spacing_tight">紧凑</string>
+    <string name="spacing_standard">标准</string>
+    <string name="spacing_loose">宽松</string>
+    <string name="margin_narrow">窄</string>
+    <string name="margin_standard">标准</string>
+    <string name="margin_wide">宽</string>
+
+    <!-- 设置 -->
+    <string name="settings_title">设置</string>
+    <string name="settings_font_manager">字体管理</string>
+    <string name="settings_font_import">导入字体</string>
+    <string name="settings_font_default">默认字体</string>
+    <string name="settings_font_delete">删除字体</string>
+    <string name="settings_font_set_default">设为默认</string>
+    <string name="settings_font_empty">还没有导入字体</string>
+    <string name="settings_font_import_hint">支持 .ttf / .otf / .ttc 字体文件，导入后保存在应用私有目录，原文件删除后仍可使用。</string>
+    <string name="settings_font_imported">已导入字体「%1$s」</string>
+    <string name="settings_font_invalid">字体文件无法解析，已取消导入</string>
+    <string name="settings_font_delete_confirm">删除字体「%1$s」？</string>
+    <string name="settings_data">数据</string>
+    <string name="settings_clear_cache">清理缓存</string>
+    <string name="settings_clear_cache_summary">清理封面、页面与排版缓存，不会删除书籍</string>
+    <string name="settings_clear_history">清理阅读历史</string>
+    <string name="settings_clear_history_summary">清除阅读进度与最近阅读记录</string>
+    <string name="settings_export">导出阅读数据</string>
+    <string name="settings_export_summary">导出阅读进度、书签与设置为 JSON 文件</string>
+    <string name="settings_import">导入阅读数据</string>
+    <string name="settings_import_summary">从之前导出的 JSON 文件恢复数据</string>
+    <string name="settings_about">关于</string>
+    <string name="settings_version">版本</string>
+    <string name="settings_licenses">开源许可</string>
+    <string name="settings_privacy_summary">本应用完全离线运行，未申请网络权限，不会上传任何书籍或阅读数据。</string>
+    <string name="data_cleared">已清理</string>
+    <string name="data_export_done">数据已导出到 %1$s</string>
+    <string name="data_import_done">已恢复 %1$d 本书的阅读数据</string>
+    <string name="data_io_failed">操作失败：%1$s</string>
+
+    <!-- 错误 -->
+    <string name="error_open_title">无法打开此文件</string>
+    <string name="error_reason_title">可能原因：</string>
+    <string name="error_reason_corrupt">文件已损坏或不完整</string>
+    <string name="error_reason_unsupported">格式不受支持</string>
+    <string name="error_reason_permission">文件权限已失效</string>
+    <string name="error_reason_missing">文件已被移动或删除</string>
+    <string name="error_pick_again">重新选择文件</string>
+    <string name="error_details">技术详情</string>
+</resources>
