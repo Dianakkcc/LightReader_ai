@@ -1,0 +1,28 @@
+{
+  "font": {
+    "file": "app/src/main/assets/fonts/NotoSerifSC-Regular.otf",
+    "version": "2.003",
+    "sha256": "e8f396decc1f0963a016a989c3d8852e863d1350996f573860a80767c83a1cd3",
+    "upstreamGitBlob": "be55fbdf3fe53bfc99779389f3f0b875707bf496"
+  },
+  "artwork": [
+    {
+      "file": "app/src/main/assets/brand/jiaran.png",
+      "sourceFile": "diana-corner-cutout-v2.png",
+      "sha256": "ca6244f511562151ed5077b95824540a6641005aaf2fe745c5c9d7d0d9862a92",
+      "rights": "原作者/相关权利人；分发授权未核实"
+    },
+    {
+      "file": "app/src/main/assets/brand/candy.png",
+      "sourceFile": "diana-candy-lollipop-v1.png",
+      "sha256": "cce1868c5093df0de144304708dcaf5be71321a5e11cf6d260ad025b401a2e38",
+      "rights": "原作者/相关权利人；分发授权未核实"
+    },
+    {
+      "file": "app/src/main/assets/brand/star.png",
+      "sourceFile": "diana-hand-star-reference-v2.png",
+      "sha256": "95ae6f760aa8ecb7695fd7242c74f8c0982b86d6b8df4aa181bc85730360a5f3",
+      "rights": "原作者/相关权利人；分发授权未核实"
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+[
+  {
+    "file": "pdfbox-LICENSE.txt",
+    "source": "https://github.com/TomRoush/PdfBox-Android/blob/v2.0.27.0/LICENSE.txt",
+    "sha256": "8ceed6051cbd7f6d5d56bad8ca5e73f0414fb13cbe0c4170f7c4c9beaa1a7679"
+  },
+  {
+    "file": "pdfbox-NOTICE.txt",
+    "source": "https://github.com/TomRoush/PdfBox-Android/blob/v2.0.27.0/NOTICE.txt",
+    "sha256": "8191c60848b9e5666a1ee50a65a7f6eab7339dc1ea20b52092f3eac5ef10d0cd"
+  },
+  {
+    "file": "noto-OFL.txt",
+    "source": "https://github.com/notofonts/noto-cjk/blob/main/Serif/LICENSE",
+    "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+  },
+  {
+    "file": "liberation-OFL.txt",
+    "source": "https://github.com/liberationfonts/liberation-fonts/blob/2.1.5/LICENSE",
+    "sha256": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
+  },
+  {
+    "file": "robolectric-MIT.txt",
+    "source": "https://github.com/robolectric/robolectric/blob/robolectric-4.14.1/LICENSE",
+    "sha256": "b9f28151a15110f04a7e40734edeaf7d650815fad5902f0736f4dd2ac4695694"
+  },
+  {
+    "file": "okio-Apache.txt",
+    "source": "https://github.com/lysine-dev/okio/blob/parent-3.4.0/LICENSE.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "kotlin-Apache.txt",
+    "source": "https://github.com/JetBrains/kotlin/blob/v2.0.21/license/LICENSE.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "asm-BSD.txt",
+    "source": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.7.1/asm-9.7.1-sources.jar!/org/objectweb/asm/ClassReader.java",
+    "sha256": "f8d2e8ab4f15bbbe95c24adae5310597c3a1151378d5e5beaae25d433a63d6ab"
+  },
+  {
+    "file": "bouncycastle-1.72.txt",
+    "source": "https://github.com/bcgit/bc-java/blob/r1rv72/LICENSE.html",
+    "sha256": "d7082b91c0c3365446e658eb33c0e19448a42e81fcd3acd6fe2e92bd0de6d5af"
+  },
+  {
+    "file": "bouncycastle-1.78.1.txt",
+    "source": "https://github.com/bcgit/bc-java/blob/r1rv78v1/LICENSE.html",
+    "sha256": "ea783c312e5f02e6b418fb20a9d290040f7623ac51cefe7b3c146e8c40289eeb"
+  },
+  {
+    "file": "Unicode-2017.txt",
+    "source": "https://github.com/unicode-org/icu/blob/release-60-2/icu4c/LICENSE (COPYRIGHT AND PERMISSION NOTICE section)",
+    "sha256": "4986dd9ddc602f7081fefa4365e359e91a9bb9efa162ce56e6d35f4b59488347"
+  },
+  {
+    "file": "Apache-2.0.txt",
+    "source": "https://github.com/JetBrains/kotlin/blob/v2.0.21/license/LICENSE.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "sqlite4java-copyright.txt",
+    "source": "Maven Central exact-version sources.jar: sqlite4java",
+    "sha256": "aaa0e26fe8e82ad7fcfcffdd0cd7c4390a30ee76bbf515b790d90a4fa08f9ec8"
+  },
+  {
+    "file": "javax-inject-copyright.txt",
+    "source": "Maven Central exact-version sources.jar: javax-inject",
+    "sha256": "030729292c636a6afc1505f5404ba728bca73beed714a69cd85bbcd5c6126c90"
+  },
+  {
+    "file": "notices/core-ktx-809fa1ed2145.txt",
+    "source": "Maven androidx.core:core-ktx:1.15.0 / core-ktx-1.15.0.aar!/META-INF/androidx/core/core-ktx/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/core-809fa1ed2145.txt",
+    "source": "Maven androidx.core:core:1.15.0 / core-1.15.0.aar!/META-INF/androidx/core/core/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/navigation-common-ktx-809fa1ed2145.txt",
+    "source": "Maven androidx.navigation:navigation-common-ktx:2.8.5 / navigation-common-ktx-2.8.5.aar!/META-INF/androidx/navigation/navigation-common-ktx/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/navigation-common-809fa1ed2145.txt",
+    "source": "Maven androidx.navigation:navigation-common:2.8.5 / navigation-common-2.8.5.aar!/META-INF/androidx/navigation/navigation-common/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/navigation-compose-809fa1ed2145.txt",
+    "source": "Maven androidx.navigation:navigation-compose:2.8.5 / navigation-compose-2.8.5.aar!/META-INF/androidx/navigation/navigation-compose/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/navigation-runtime-ktx-809fa1ed2145.txt",
+    "source": "Maven androidx.navigation:navigation-runtime-ktx:2.8.5 / navigation-runtime-ktx-2.8.5.aar!/META-INF/androidx/navigation/navigation-runtime-ktx/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/navigation-runtime-809fa1ed2145.txt",
+    "source": "Maven androidx.navigation:navigation-runtime:2.8.5 / navigation-runtime-2.8.5.aar!/META-INF/androidx/navigation/navigation-runtime/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/webkit-809fa1ed2145.txt",
+    "source": "Maven androidx.webkit:webkit:1.12.1 / webkit-1.12.1.aar!/META-INF/androidx/webkit/webkit/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "notices/icu4j-3ae033da0bfd.txt",
+    "source": "Maven com.ibm.icu:icu4j:75.1 / icu4j-75.1.jar!/LICENSE",
+    "sha256": "3ae033da0bfd60f4609c5c99fe50c0c840685889d3b705d3f527fd7b52032f5c"
+  },
+  {
+    "file": "notices/javax.annotation-api-a4c80869daf4.txt",
+    "source": "Maven javax.annotation:javax.annotation-api:1.3.2 / javax.annotation-api-1.3.2.jar!/META-INF/LICENSE.txt",
+    "sha256": "a4c80869daf4350b6773bd5e6ee1d0a6cc52b63db3a3d2dc20961b0cdd272a5c"
+  },
+  {
+    "file": "notices/junit-9648bb2891b9.txt",
+    "source": "Maven junit:junit:4.13.2 / junit-4.13.2.jar!/LICENSE-junit.txt",
+    "sha256": "9648bb2891b9813970bddb68d4be8a5e6ec8280d0180a53dfb29236b579c55bb"
+  },
+  {
+    "file": "notices/checker-qual-e90eaa08dea0.txt",
+    "source": "Maven org.checkerframework:checker-qual:3.43.0 / checker-qual-3.43.0.jar!/META-INF/LICENSE.txt",
+    "sha256": "e90eaa08dea089df10f2bf7f9dba63a5f6237c01562c4741e2e86773e78582d5"
+  },
+  {
+    "file": "notices/commonmark-ext-gfm-tables-11cfcf6da014.txt",
+    "source": "Maven org.commonmark:commonmark-ext-gfm-tables:0.24.0 / commonmark-ext-gfm-tables-0.24.0.jar!/META-INF/LICENSE.txt",
+    "sha256": "11cfcf6da0142fb1971c1f40f5924ddded14454e2793d7f1dd87c9f4abe42dfd"
+  },
+  {
+    "file": "notices/commonmark-11cfcf6da014.txt",
+    "source": "Maven org.commonmark:commonmark:0.24.0 / commonmark-0.24.0.jar!/META-INF/LICENSE.txt",
+    "sha256": "11cfcf6da0142fb1971c1f40f5924ddded14454e2793d7f1dd87c9f4abe42dfd"
+  },
+  {
+    "file": "notices/hamcrest-core-1cde867cab5c.txt",
+    "source": "Maven org.hamcrest:hamcrest-core:1.3 / hamcrest-core-1.3.jar!/LICENSE.txt",
+    "sha256": "1cde867cab5c8e842929da5391cef98b4017314822270e934e8e2eef3767c666"
+  },
+  {
+    "file": "notices/hamcrest-integration-1cde867cab5c.txt",
+    "source": "Maven org.hamcrest:hamcrest-integration:1.3 / hamcrest-integration-1.3.jar!/LICENSE.txt",
+    "sha256": "1cde867cab5c8e842929da5391cef98b4017314822270e934e8e2eef3767c666"
+  },
+  {
+    "file": "notices/hamcrest-library-1cde867cab5c.txt",
+    "source": "Maven org.hamcrest:hamcrest-library:1.3 / hamcrest-library-1.3.jar!/LICENSE.txt",
+    "sha256": "1cde867cab5c8e842929da5391cef98b4017314822270e934e8e2eef3767c666"
+  },
+  {
+    "file": "notices/jsoup-7b175df01644.txt",
+    "source": "Maven org.jsoup:jsoup:1.18.3 / jsoup-1.18.3.jar!/META-INF/LICENSE",
+    "sha256": "7b175df01644812d2163a51c0cf1a2d1b93433585dabd2a4a80494f84cba085a"
+  },
+  {
+    "file": "notices/rhino-ada0787f27b5.txt",
+    "source": "Maven org.mozilla:rhino:1.7.15 / rhino-1.7.15.jar!/META-INF/LICENSE.txt",
+    "sha256": "ada0787f27b581e024972a18b51db92c8e8508d0f05017d104a1c70a61b59951"
+  },
+  {
+    "file": "notices/rhino-dd4baa87ecb0.txt",
+    "source": "Maven org.mozilla:rhino:1.7.15 / rhino-1.7.15.jar!/META-INF/NOTICE.txt",
+    "sha256": "dd4baa87ecb0f65aa0df9240a8d61b45dc68b232e39a93024fa3d8cc119617c9"
+  },
+  {
+    "file": "notices/rhino-9246f7f820e7.txt",
+    "source": "Maven org.mozilla:rhino:1.7.15 / rhino-1.7.15.jar!/META-INF/NOTICE-tools.txt",
+    "sha256": "9246f7f820e791b7328d46ba341bb5a2bb08c3e2e1b9d36803ab0c3899e0462f"
+  },
+  {
+    "file": "pdfbox-resource-notices.txt",
+    "source": "pdfbox-android-2.0.27.0.aar / assets resource headers",
+    "sha256": "fc746c1e985907ac151516de7891a2aefad7da9f7776cc715df6d8834d3dab37"
+  },
+  {
+    "file": "NotoSerifSC-copyright.txt",
+    "source": "Font name table, upstream Serif2.003 Git blob verified",
+    "sha256": "348d5f76811d0eb53b20699b7e1bdc1d29a0172eec9f08041dbfcc4533ea4004"
+  },
+  {
+    "file": "ARTWORK-NOTICE.txt",
+    "source": "项目素材追溯记录；第三方图片授权未核实",
+    "sha256": "65c1b0b326b69af55bf51d6196a00ca2b10ecf0ccb4335cef243084af7d46a73"
+  }
+]
